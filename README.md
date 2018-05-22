@@ -1,6 +1,6 @@
 ## Set up on Minikube
 
-The following gives an example on how to start a one-node Kafka **cluster** in Minikube.
+The following gives an example on how to start a one-node Kafka **cluster** in Minikube. It is based on https://github.com/Yolean/kubernetes-kafka/tree/single-node
 
 First of all, ensure `kubectl` and `minikube` are installed and minikube is started.
 
