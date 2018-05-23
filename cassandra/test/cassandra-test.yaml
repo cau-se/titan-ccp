@@ -19,4 +19,4 @@ spec:
         image: soerenhenning/cassandra-test
         env:
         - name: CASSANDRA_HOST
-          value: "cassandra.svc.cluster.local"
+          value: "cassandra.titan-ccp.svc.cluster.local"
