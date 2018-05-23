@@ -17,3 +17,6 @@ spec:
       containers:
       - name: cassandra-test
         image: soerenhenning/cassandra-test
+        env:
+        - name: CASSANDRA_HOST
+          value: "cassandra.svc.cluster.local"
