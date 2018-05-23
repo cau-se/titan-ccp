@@ -27,13 +27,6 @@ spec:
         env:
         - name: ID_OFFSET
           value: "4"
-        volumeMounts:
-        - name: configmap
-          mountPath: /etc/kafka-configmap
-        - name: config
-          mountPath: /etc/kafka
-        - name: data
-          mountPath: /var/lib/zookeeper/data
       containers:
       - name: zookeeper
         image: solsson/kafka:1.0.1@sha256:1a4689d49d6274ac59b9b740f51b0408e1c90a9b66d16ad114ee9f7193bab111
@@ -60,16 +53,3 @@ spec:
             - /bin/sh
             - -c
             - '[ "imok" = "$(echo ruok | nc -w 1 -q 1 127.0.0.1 2181)" ]'
-        volumeMounts:
-        - name: config
-          mountPath: /etc/kafka
-        - name: data
-          mountPath: /var/lib/zookeeper/data
-      volumes:
-      - name: configmap
-        configMap:
-          name: zookeeper-config
-      - name: config
-        emptyDir: {}
-      - name: data
-        emptyDir: {}
