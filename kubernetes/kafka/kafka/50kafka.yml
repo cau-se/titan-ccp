@@ -1,14 +1,13 @@
-apiVersion: apps/v1beta2
+apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: kafka
-  namespace: kafka
 spec:
   selector:
     matchLabels:
       app: kafka
   serviceName: "broker"
-  replicas: 1
+  replicas: 3
   updateStrategy:
     type: OnDelete
   template:
@@ -69,20 +68,9 @@ spec:
         volumeMounts:
         - name: config
           mountPath: /etc/kafka
-        - name: data
-          mountPath: /var/lib/kafka/data
       volumes:
       - name: configmap
         configMap:
           name: broker-config
       - name: config
         emptyDir: {}
-  volumeClaimTemplates:
-  - metadata:
-      name: data
-    spec:
-      accessModes: [ "ReadWriteOnce" ]
-      storageClassName: kafka-broker
-      resources:
-        requests:
-          storage: 200Gi
