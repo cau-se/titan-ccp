@@ -22,3 +22,5 @@ spec:
           value: "cassandra.titan-ccp.svc.cluster.local"
         - name: WEBSERVER_PORT
           value: "80"
+        - name: KAFKA_BOOTSTRAP_SERVERS
+          value: "bootstrap:9092"
