@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: cassandra-test
-        image: soerenhenning/cassandra-test:d1805241209
+        image: soerenhenning/cassandra-test:d1805241407
         env:
         - name: CASSANDRA_HOST
           value: "cassandra.titan-ccp.svc.cluster.local"
