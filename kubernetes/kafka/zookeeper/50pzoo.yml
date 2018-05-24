@@ -1,4 +1,4 @@
-apiVersion: apps/v1beta2
+apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: pzoo
@@ -8,7 +8,7 @@ spec:
       app: zookeeper
       storage: persistent
   serviceName: "pzoo"
-  replicas: 1
+  replicas: 3
   updateStrategy:
     type: OnDelete
   template:
@@ -23,6 +23,11 @@ spec:
       - name: init-config
         image: solsson/kafka-initutils@sha256:18bf01c2c756b550103a99b3c14f741acccea106072cd37155c6d24be4edd6e2
         command: ['/bin/bash', '/etc/kafka-configmap/init.sh']
+        volumeMounts:
+        - name: configmap
+          mountPath: /etc/kafka-configmap
+        - name: config
+          mountPath: /etc/kafka
       containers:
       - name: zookeeper
         image: solsson/kafka:1.0.1@sha256:1a4689d49d6274ac59b9b740f51b0408e1c90a9b66d16ad114ee9f7193bab111
@@ -49,3 +54,12 @@ spec:
             - /bin/sh
             - -c
             - '[ "imok" = "$(echo ruok | nc -w 1 -q 1 127.0.0.1 2181)" ]'
+        volumeMounts:
+        - name: config
+          mountPath: /etc/kafka
+      volumes:
+      - name: configmap
+        configMap:
+          name: zookeeper-config
+      - name: config
+        emptyDir: {}
