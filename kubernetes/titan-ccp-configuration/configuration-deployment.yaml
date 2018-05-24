@@ -20,3 +20,5 @@ spec:
         env:
         - name: WEBSERVER_PORT
           value: "80"
+        - name: REDIS_HOST
+          value: "redis-master"
