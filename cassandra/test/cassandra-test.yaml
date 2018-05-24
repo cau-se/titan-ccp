@@ -20,3 +20,5 @@ spec:
         env:
         - name: CASSANDRA_HOST
           value: "cassandra.titan-ccp.svc.cluster.local"
+        - name: WEBSERVER_PORT
+          value: "80"
