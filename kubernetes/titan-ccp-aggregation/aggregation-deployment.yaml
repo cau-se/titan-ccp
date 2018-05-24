@@ -24,3 +24,5 @@ spec:
           value: "80"
         - name: KAFKA_BOOTSTRAP_SERVERS
           value: "bootstrap:9092"
+        - name: CONFIGURATION_HOST
+          value: "titan-ccp-configuration"
