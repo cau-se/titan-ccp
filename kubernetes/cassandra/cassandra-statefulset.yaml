@@ -18,7 +18,7 @@ spec:
       terminationGracePeriodSeconds: 1800
       containers:
       - name: cassandra
-        image: gcr.io/google-samples/cassandra:v13
+        image: cassandra
         imagePullPolicy: Always
         ports:
         - containerPort: 7000
@@ -29,13 +29,13 @@ spec:
           name: jmx
         - containerPort: 9042
           name: cql
-        resources:
-          limits:
-            cpu: "500m"
-            memory: 1Gi
-          requests:
-           cpu: "500m"
-           memory: 1Gi
+        #resources:
+        #  limits:
+        #    cpu: "500m"
+        #    memory: 1Gi
+        #  requests:
+        #   cpu: "500m"
+        #   memory: 1Gi
         securityContext:
           capabilities:
             add:
@@ -48,12 +48,12 @@ spec:
               - -c
               - nodetool drain
         env:
-          - name: MAX_HEAP_SIZE
-            value: 512M
-          - name: HEAP_NEWSIZE
-            value: 100M
+          #- name: MAX_HEAP_SIZE
+          #  value: 512M
+          #- name: HEAP_NEWSIZE
+          #  value: 100M
           - name: CASSANDRA_SEEDS
-            value: "cassandra-0.cassandra.titan-ccp.svc.cluster.local"
+            value: "cassandra-0"
           - name: CASSANDRA_CLUSTER_NAME
             value: "K8Demo"
           - name: CASSANDRA_DC
@@ -72,11 +72,3 @@ spec:
             - /ready-probe.sh
           initialDelaySeconds: 15
           timeoutSeconds: 5
----
-kind: StorageClass
-apiVersion: storage.k8s.io/v1
-metadata:
-  name: fast
-provisioner: k8s.io/minikube-hostpath
-parameters:
-  type: pd-ssd
