@@ -1,0 +1,22 @@
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: titan-ccp-raritan-simulator
+spec:
+  selector:
+    matchLabels:
+      app: titan-ccp-raritan-simulator
+  replicas: 1 # tells deployment to run 2 pods matching the template
+  template: # create pods using pod definition in this template
+    metadata:
+      # unlike pod-nginx.yaml, the name is not included in the meta data as a unique name is
+      # generated from the deployment name
+      labels:
+        app: titan-ccp-raritan-simulator
+    spec:
+      containers:
+      - name: titan-ccp-raritan-simulator
+        image: industrialdevops/titan-ccp-raritan-simulator:20180528111423
+        env:
+        - name: KIEKER_BRIDGE_ADDRESS
+          value: "http://titan-ccp-kieker-bridge-raritan:80/raritan"
