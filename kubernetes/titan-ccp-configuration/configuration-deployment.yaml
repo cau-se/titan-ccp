@@ -16,9 +16,11 @@ spec:
     spec:
       containers:
       - name: titan-ccp-configuration
-        image: industrialdevops/titan-ccp-configuration:20180524141714
+        image: industrialdevops/titan-ccp-configuration:20180529203813
         env:
         - name: WEBSERVER_PORT
           value: "80"
         - name: REDIS_HOST
           value: "redis-master"
+        - name: KAFKA_BOOTSTRAP_SERVERS
+          value: "bootstrap:9092"
