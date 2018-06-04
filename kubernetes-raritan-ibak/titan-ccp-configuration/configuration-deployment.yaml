@@ -1,30 +1,26 @@
 apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
 kind: Deployment
 metadata:
-  name: titan-ccp-aggregation
+  name: titan-ccp-configuration
 spec:
   selector:
     matchLabels:
-      app: titan-ccp-aggregation
+      app: titan-ccp-configuration
   replicas: 1 # tells deployment to run 2 pods matching the template
   template: # create pods using pod definition in this template
     metadata:
       # unlike pod-nginx.yaml, the name is not included in the meta data as a unique name is
       # generated from the deployment name
       labels:
-        app: titan-ccp-aggregation
+        app: titan-ccp-configuration
     spec:
       containers:
-      - name: titan-ccp-aggregation
-        image: industrialdevops/titan-ccp-aggregation:20180604112335
+      - name: titan-ccp-configuration
+        image: industrialdevops/titan-ccp-configuration:20180530102412
         env:
-        - name: CASSANDRA_HOST
-          value: "cassandra"
         - name: WEBSERVER_PORT
           value: "80"
+        - name: REDIS_HOST
+          value: "redis-master"
         - name: KAFKA_BOOTSTRAP_SERVERS
           value: "bootstrap:9092"
-        - name: CONFIGURATION_HOST
-          value: "titan-ccp-configuration"
-        - name: CONFIGURATION_PORT
-          value: "80"
