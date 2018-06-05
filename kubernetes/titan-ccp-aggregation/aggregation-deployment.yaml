@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: titan-ccp-aggregation
-        image: industrialdevops/titan-ccp-aggregation:20180605085243
+        image: industrialdevops/titan-ccp-aggregation:20180605120545
         env:
         - name: CASSANDRA_HOST
           value: "cassandra"
