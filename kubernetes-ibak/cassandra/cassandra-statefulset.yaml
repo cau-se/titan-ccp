@@ -1,13 +1,12 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: ibak-cassandra
+  name: cassandra
   labels:
     app: cassandra
-    env: ibak
 spec:
-  serviceName: ibak-cassandra
-  replicas: 1
+  serviceName: cassandra
+  replicas: 3
   selector:
     matchLabels:
       app: cassandra
@@ -15,7 +14,6 @@ spec:
     metadata:
       labels:
         app: cassandra
-        env: ibak
     spec:
       terminationGracePeriodSeconds: 1800
       containers:
@@ -55,7 +53,7 @@ spec:
           #- name: HEAP_NEWSIZE
           #  value: 100M
           - name: CASSANDRA_SEEDS
-            value: "ibak-cassandra-0.ibak-cassandra.titan-ccp.svc.cluster.local"
+            value: "cassandra-0.cassandra.titan-ccp.svc.cluster.local"
           - name: CASSANDRA_CLUSTER_NAME
             value: "K8Demo"
           - name: CASSANDRA_DC

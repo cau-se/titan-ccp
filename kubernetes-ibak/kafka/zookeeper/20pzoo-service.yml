@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: ibak-pzoo
+  name: pzoo
 spec:
   ports:
   - port: 2888
@@ -10,5 +10,5 @@ spec:
     name: leader-election
   clusterIP: None
   selector:
-    app: ibak-zookeeper
+    app: zookeeper
     storage: persistent

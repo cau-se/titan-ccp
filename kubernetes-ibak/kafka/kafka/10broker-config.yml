@@ -1,6 +1,6 @@
 kind: ConfigMap
 metadata:
-  name: ibka-kafka-broker-config
+  name: broker-config
 apiVersion: v1
 data:
   init.sh: |-
