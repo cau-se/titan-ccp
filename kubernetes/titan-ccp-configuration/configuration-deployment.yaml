@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: titan-ccp-configuration
-        image: industrialdevops/titan-ccp-configuration:20180530102412
+        image: industrialdevops/titan-ccp-configuration:20180607122811
         env:
         - name: WEBSERVER_PORT
           value: "80"
