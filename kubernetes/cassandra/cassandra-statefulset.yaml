@@ -53,7 +53,7 @@ spec:
           #- name: HEAP_NEWSIZE
           #  value: 100M
           - name: CASSANDRA_SEEDS
-            value: "cassandra-0.cassandra.titan-ccp.svc.cluster.local"
+            value: "cassandra-0.cassandra"
           - name: CASSANDRA_CLUSTER_NAME
             value: "K8Demo"
           - name: CASSANDRA_DC

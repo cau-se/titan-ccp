@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: titan-ccp-kieker-bridge-raritan
-        image: industrialdevops/titan-ccp-kieker-bridge-raritan:20180610121645
+        image: industrialdevops/titan-ccp-kieker-bridge-raritan:20180611072738
         env:
         - name: KAFKA_BOOTSTRAP_SERVERS
           value: "bootstrap:9092"
