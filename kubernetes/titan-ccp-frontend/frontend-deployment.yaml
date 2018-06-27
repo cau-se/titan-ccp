@@ -16,4 +16,4 @@ spec:
     spec:
       containers:
       - name: titan-ccp-frontend
-        image: industrialdevops/titan-ccp-frontend:latest #TODO replace by date tag
+        image: industrialdevops/titan-ccp-frontend:20180627130708
