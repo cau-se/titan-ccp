@@ -22,5 +22,3 @@ spec:
           value: "bootstrap:9092"
         - name: KAFKA_TOPIC
           value: "input"
-        - name: SETUP
-          value: "demo"
