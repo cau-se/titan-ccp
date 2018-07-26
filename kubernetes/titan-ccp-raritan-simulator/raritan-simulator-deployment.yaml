@@ -21,4 +21,4 @@ spec:
         - name: KIEKER_BRIDGE_ADDRESS
           value: "http://titan-ccp-kieker-bridge-raritan:80/raritan"
         - name: SETUP
-          value: "demo"
+          value: "feas"
