@@ -34,3 +34,4 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: default
+  namespace: titan-ccp
