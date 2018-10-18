@@ -5,6 +5,6 @@ metadata:
 spec:
   clusterIP: None
   ports:  
-  - port: 80
+  - port: 8080
   selector:    
     app: titan-ccp-kieker-bridge-raritan
