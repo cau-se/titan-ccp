@@ -16,4 +16,4 @@ spec:
     spec:
       containers:
       - name: titan-ccp-frontend
-        image: industrialdevops/titan-ccp-frontend:20180712153832
+        image: industrialdevops/titan-ccp-frontend:20181023135251
