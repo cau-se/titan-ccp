@@ -52,7 +52,7 @@ services:
     ports:
       - "8185:8080"
     environment:
-      SETUP: demo
+      DEMO: "true"
   titan-ccp-raritan-simulator:
     image: industrialdevops/titan-ccp-raritan-simulator:20180726123855
     environment:
