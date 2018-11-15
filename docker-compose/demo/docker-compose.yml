@@ -50,7 +50,7 @@ services:
   titan-ccp-frontend:
     image: industrialdevops/titan-ccp-frontend:20181023135251
     ports:
-      - "8085:8080"
+      - "8185:8080"
   titan-ccp-raritan-simulator:
     image: industrialdevops/titan-ccp-raritan-simulator:20180726123855
     environment:
