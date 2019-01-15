@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: titan-ccp-kieker-bridge-raritan
-        image: industrialdevops/titan-ccp-kieker-bridge-raritan:20190114140805_ibak-replay
+        image: industrialdevops/titan-ccp-kieker-bridge-raritan:20190115112027_ibak-replay
         env:
         - name: KAFKA_BOOTSTRAP_SERVERS
           value: "bootstrap:9092"
