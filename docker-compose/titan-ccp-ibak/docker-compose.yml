@@ -36,7 +36,7 @@ services:
   titan-ccp-kieker-bridge-raritan:
     image: industrialdevops/titan-ccp-kieker-bridge-raritan:20190115112027_ibak-replay
     expose:
-      - "8080"
+      - "8099:8080"
     environment:
       KAFKA_BOOTSTRAP_SERVERS: kafka:9092
       KAFKA_TOPIC: input
@@ -53,3 +53,8 @@ services:
     image: industrialdevops/titan-ccp-frontend:20181115145153
     ports:
       - "8090:8080"
+  titan-ccp-raritan-simulator:
+    image: industrialdevops/titan-ccp-raritan-simulator:20180726123855
+    environment:
+      KIEKER_BRIDGE_ADDRESS: http://titan-ccp-kieker-bridge-raritan:8080/raritan
+      SETUP: demo
