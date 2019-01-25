@@ -48,7 +48,6 @@ services:
       REDIS_HOST: redis
       KAFKA_BOOTSTRAP_SERVERS: kafka:9092
       STARTUP_WAIT_MS: 30000
-      DEMO: "true"
   titan-ccp-frontend:
     image: industrialdevops/titan-ccp-frontend:20181115145153
     ports:
