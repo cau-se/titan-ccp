@@ -42,7 +42,7 @@ services:
       KAFKA_TOPIC: input
   titan-ccp-configuration:
     image: industrialdevops/titan-ccp-configuration:20181112142005
-    port:
+    ports:
       - "8091:80"
     environment:
       REDIS_HOST: redis
