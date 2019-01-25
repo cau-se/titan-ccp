@@ -42,12 +42,13 @@ services:
       KAFKA_TOPIC: input
   titan-ccp-configuration:
     image: industrialdevops/titan-ccp-configuration:20181112142005
-    ports:
-      - "8091:80"
+    expose:
+      - "80"
     environment:
       REDIS_HOST: redis
       KAFKA_BOOTSTRAP_SERVERS: kafka:9092
       STARTUP_WAIT_MS: 30000
+      DEMO: "false"
   titan-ccp-frontend:
     image: industrialdevops/titan-ccp-frontend:20181115145153
     ports:
