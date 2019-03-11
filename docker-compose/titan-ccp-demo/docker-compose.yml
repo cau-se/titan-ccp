@@ -6,12 +6,10 @@ services:
       - "2181"
   kafka:
     image: wurstmeister/kafka
-    ports:
-      - "9092:9092"
     expose:
       - "9092"
     environment:
-      KAFKA_ADVERTISED_HOST_NAME: 172.17.0.1
+      KAFKA_ADVERTISED_HOST_NAME: kafka
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
       KAFKA_CREATE_TOPICS: "input:3:1,output:3:1"
       KAFKA_LOG_RETENTION_HOURS: 1
