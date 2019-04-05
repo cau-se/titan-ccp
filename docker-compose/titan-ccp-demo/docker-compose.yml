@@ -11,7 +11,7 @@ services:
     environment:
       KAFKA_ADVERTISED_HOST_NAME: kafka
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
-      KAFKA_CREATE_TOPICS: "input:3:1,output:3:1"
+      KAFKA_CREATE_TOPICS: "input:3:1,output:3:1,configuration:3:1"
       KAFKA_LOG_RETENTION_HOURS: 1
   cassandra:
     image: cassandra
@@ -21,8 +21,8 @@ services:
     image: redis
     expose:
       - "6379"
-  titan-ccp-aggregation:
-    image: industrialdevops/titan-ccp-aggregation:20181121083454
+  titan-ccp-history:
+    image: industrialdevops/titan-ccp-history:55f8296254a9a8695a4c219465be98d5603840d9
     expose:
       - "80"
     environment:
@@ -31,15 +31,15 @@ services:
       KAFKA_BOOTSTRAP_SERVERS: kafka:9092
       CONFIGURATION_HOST: titan-ccp-configuration
       CONFIGURATION_PORT: 80
-  titan-ccp-kieker-bridge-raritan:
-    image: industrialdevops/titan-ccp-kieker-bridge-raritan:20181121154241
+  titan-ccp-record-bridge-raritan:
+    image: industrialdevops/titan-ccp-kieker-bridge-raritan:20190404144022
     expose:
       - "8080"
     environment:
       KAFKA_BOOTSTRAP_SERVERS: kafka:9092
       KAFKA_TOPIC: input
   titan-ccp-configuration:
-    image: industrialdevops/titan-ccp-configuration:20181112142005
+    image: industrialdevops/titan-ccp-configuration:20190404143029
     expose:
       - "80"
     environment:
@@ -48,13 +48,15 @@ services:
       STARTUP_WAIT_MS: 30000
       DEMO: "true"
   titan-ccp-frontend:
-    image: industrialdevops/titan-ccp-frontend:20181115145153
+    image: industrialdevops/titan-ccp-frontend:20190315143629
     ports:
       - "8185:8080"
     environment:
       DEMO: "true"
+      CONFIGURATION_BASE_URL: "http://titan-ccp-configuration:80"
+      HISTORY_BASE_URL: "http://titan-ccp-history:80"
   titan-ccp-raritan-simulator:
-    image: industrialdevops/titan-ccp-raritan-simulator:20180726123855
+    image: industrialdevops/titan-ccp-raritan-simulator:20190405091811
     environment:
-      KIEKER_BRIDGE_ADDRESS: http://titan-ccp-kieker-bridge-raritan:8080/raritan
+      KIEKER_BRIDGE_ADDRESS: http://titan-ccp-record-bridge-raritan:8080/raritan
       SETUP: demo
