@@ -1,4 +1,6 @@
-The start up procedure for the live demo is currently a bit hacky:
+# Docker Compose Demo
 
-1. Run `docker-compose up -d`
-2. Wait a minute and run `docker-compose restart titan-ccp-history`
+To run the demo execute `docker-compose up -d`. This will start up all the microservices along with their corresponding
+databases etc. After everything is running, you can access the frontend via `http://http://localhost:8185`.
+
+Shutdown everything with `docker-compose down`.
