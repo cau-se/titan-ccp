@@ -56,7 +56,7 @@ services:
       STARTUP_WAIT_MS: 30000
       DEMO: "true"
   titan-ccp-frontend:
-    image: industrialdevops/titan-ccp-frontend:98878494c0c5597203c720aedd14e1c1df6da807
+    image: industrialdevops/titan-ccp-frontend:6122b58ea52572e9f4b3a7611e171a0ed9f629fe
     ports:
       - "8185:8080"
     environment:
