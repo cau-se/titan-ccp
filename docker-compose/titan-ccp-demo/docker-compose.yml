@@ -21,6 +21,10 @@ services:
     image: redis
     expose:
       - "6379"
+    environment:
+      MAX_HEAP_SIZE: 512M
+      HEAP_NEWSIZE: 128M
+    mem_limit: 1024m
   titan-ccp-history:
     image: industrialdevops/titan-ccp-history:55f8296254a9a8695a4c219465be98d5603840d9
     expose:
