@@ -1,0 +1,23 @@
+cff-version: 1.0.3
+message: If you use this software, please cite it as below.
+authors:
+  - family-names: Hasselbring
+    given-names: Wilhelm
+    orcid: https://orcid.org/0000-0001-6625-4335
+  - family-names: Henning
+    given-names: Sören
+    orcid: https://orcid.org/0000-0001-6912-2549
+  - family-names: Latte
+    given-names: Stephan
+  - family-names: Björn
+    given-names: Armin
+  - family-names: Richter
+    given-names: Thomas
+  - family-names: Schalk
+    given-names: Stefan
+  - family-names: Wojcieszak
+    given-names: Maik
+title: Titan Control Center
+version: 1.0.0
+doi: 10.1109/ICSA-C.2019.00029
+date-released: 2019-03-26
