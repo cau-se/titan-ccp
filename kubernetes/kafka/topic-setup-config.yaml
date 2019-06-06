@@ -1,0 +1,40 @@
+kind: ConfigMap
+metadata:
+  name: kafka-setup-config
+apiVersion: v1
+data:
+  setup.sh: |-
+    #!/bin/bash
+    ./bin/kafka-topics.sh \
+      --zookeeper \
+        zookeeper:2181 \
+      --create \
+      --if-not-exists \
+      --topic \
+        input \
+      --partitions \
+        3 \
+      --replication-factor \
+        2
+    ./bin/kafka-topics.sh \
+      --zookeeper \
+        zookeeper:2181 \
+      --create \
+      --if-not-exists \
+      --topic \
+        output \
+      --partitions \
+        3 \
+      --replication-factor \
+        2
+    ./bin/kafka-topics.sh \
+      --zookeeper \
+        zookeeper:2181 \
+      --create \
+      --if-not-exists \
+      --topic \
+        configuration \
+      --partitions \
+        3 \
+      --replication-factor \
+        2

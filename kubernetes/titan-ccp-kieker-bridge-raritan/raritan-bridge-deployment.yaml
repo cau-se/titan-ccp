@@ -1,4 +1,4 @@
-apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: titan-ccp-kieker-bridge-raritan
@@ -6,17 +6,15 @@ spec:
   selector:
     matchLabels:
       app: titan-ccp-kieker-bridge-raritan
-  replicas: 1 # tells deployment to run 2 pods matching the template
+  replicas: 1
   template: # create pods using pod definition in this template
     metadata:
-      # unlike pod-nginx.yaml, the name is not included in the meta data as a unique name is
-      # generated from the deployment name
       labels:
         app: titan-ccp-kieker-bridge-raritan
     spec:
       containers:
       - name: titan-ccp-kieker-bridge-raritan
-        image: industrialdevops/titan-ccp-kieker-bridge-raritan:20181018141757
+        image: industrialdevops/titan-ccp-kieker-bridge-raritan:20190404144022
         env:
         - name: KAFKA_BOOTSTRAP_SERVERS
           value: "bootstrap:9092"

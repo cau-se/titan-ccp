@@ -6,14 +6,21 @@ spec:
   selector:
     matchLabels:
       app: titan-ccp-frontend
-  replicas: 1 # tells deployment to run 2 pods matching the template
+  replicas: 1
   template: # create pods using pod definition in this template
     metadata:
-      # unlike pod-nginx.yaml, the name is not included in the meta data as a unique name is
-      # generated from the deployment name
       labels:
         app: titan-ccp-frontend
     spec:
       containers:
       - name: titan-ccp-frontend
-        image: industrialdevops/titan-ccp-frontend:20181023135251
+        image: industrialdevops/titan-ccp-frontend:78ad157c41aa0082698c3722eb34a633bdb1e7d9
+        env:
+        - name: DEMO
+          value: "true"
+        - name: CONFIGURATION_BASE_URL
+          value: "http://titan-ccp-configuration:80"
+        - name: HISTORY_BASE_URL
+          value: "http://titan-ccp-history:80"
+        - name: STATS_BASE_URL
+          value: "http://titan-ccp-stats:80"
