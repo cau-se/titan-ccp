@@ -11,4 +11,4 @@ spec:
   clusterIP: None
   selector:
     app: zookeeper
-    storage: ephemeral
+    storage: persistent-regional
