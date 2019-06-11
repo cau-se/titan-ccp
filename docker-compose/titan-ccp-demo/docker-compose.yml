@@ -17,14 +17,14 @@ services:
     image: cassandra
     expose:
       - "9042"
-  redis:
-    image: redis
-    expose:
-      - "6379"
     environment:
       MAX_HEAP_SIZE: 512M
       HEAP_NEWSIZE: 128M
     mem_limit: 1024m
+  redis:
+    image: redis
+    expose:
+      - "6379"
   titan-ccp-history:
     image: industrialdevops/titan-ccp-history:55f8296254a9a8695a4c219465be98d5603840d9
     expose:
@@ -62,7 +62,7 @@ services:
       STARTUP_WAIT_MS: 30000
       DEMO: "true"
   titan-ccp-frontend:
-    image: industrialdevops/titan-ccp-frontend:78ad157c41aa0082698c3722eb34a633bdb1e7d9
+    image: industrialdevops/titan-ccp-frontend:8e5a110c6f6f8a4ec9dfa28e9a88dbc57fdc635c
     ports:
       - "8185:8080"
     environment:
