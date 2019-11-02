@@ -25,18 +25,22 @@ services:
     image: redis
     expose:
       - "6379"
+  titan-ccp-aggregation:
+    image: industrialdevops/titan-ccp-aggregation:0d0ec2d57393ee6fc6fef5dc4f06977e24c905f8
+    expose:
+      - "80"
+    environment:
+      KAFKA_BOOTSTRAP_SERVERS: kafka:9092
   titan-ccp-history:
-    image: industrialdevops/titan-ccp-history:55f8296254a9a8695a4c219465be98d5603840d9
+    image: industrialdevops/titan-ccp-history:8d9a361ba70c9de3461098d264190ed91b24318c
     expose:
       - "80"
     environment:
       CASSANDRA_HOST: cassandra
       WEBSERVER_PORT: 80
       KAFKA_BOOTSTRAP_SERVERS: kafka:9092
-      CONFIGURATION_HOST: titan-ccp-configuration
-      CONFIGURATION_PORT: 80
   titan-ccp-stats:
-    image: industrialdevops/titan-ccp-stats:1bd314645c9fa6770da19e196236d20042e42996
+    image: industrialdevops/titan-ccp-stats:1d8e3e7c255c5f00c7c700b727b8301acfe765b1
     expose:
       - "80"
     environment:
@@ -45,15 +49,8 @@ services:
       KAFKA_BOOTSTRAP_SERVERS: kafka:9092
       KAFKA_TOPIC_ACTIVEPOWER: input
       KAFKA_TOPIC_AGGRACTIVEPOWER: output
-  titan-ccp-record-bridge-raritan:
-    image: industrialdevops/titan-ccp-kieker-bridge-raritan:20190404144022
-    expose:
-      - "8080"
-    environment:
-      KAFKA_BOOTSTRAP_SERVERS: kafka:9092
-      KAFKA_TOPIC: input
   titan-ccp-configuration:
-    image: industrialdevops/titan-ccp-configuration:20190405140949
+    image: industrialdevops/titan-ccp-configuration:a5afaadf3ebd28c31b064fd0fb5fa6ddd954e114
     expose:
       - "80"
     environment:
@@ -62,7 +59,7 @@ services:
       STARTUP_WAIT_MS: 30000
       DEMO: "true"
   titan-ccp-frontend:
-    image: industrialdevops/titan-ccp-frontend:8e5a110c6f6f8a4ec9dfa28e9a88dbc57fdc635c
+    image: industrialdevops/titan-ccp-frontend:c9ee49ea8835df9f86eec7ad1e33a5f479462598
     ports:
       - "8185:8080"
     environment:
@@ -70,6 +67,13 @@ services:
       CONFIGURATION_BASE_URL: "http://titan-ccp-configuration:80"
       HISTORY_BASE_URL: "http://titan-ccp-history:80"
       STATS_BASE_URL: "http://titan-ccp-stats:80"
+  titan-ccp-record-bridge-raritan:
+    image: industrialdevops/titan-ccp-kieker-bridge-raritan:20190404144022
+    expose:
+      - "8080"
+    environment:
+      KAFKA_BOOTSTRAP_SERVERS: kafka:9092
+      KAFKA_TOPIC: input
   titan-ccp-raritan-simulator:
     image: industrialdevops/titan-ccp-raritan-simulator:20190405091811
     environment:
