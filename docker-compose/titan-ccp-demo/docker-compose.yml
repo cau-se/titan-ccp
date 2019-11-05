@@ -67,15 +67,17 @@ services:
       CONFIGURATION_BASE_URL: "http://titan-ccp-configuration:80"
       HISTORY_BASE_URL: "http://titan-ccp-history:80"
       STATS_BASE_URL: "http://titan-ccp-stats:80"
-  titan-ccp-record-bridge-raritan:
-    image: industrialdevops/titan-ccp-kieker-bridge-raritan:20190404144022
+  titan-flow-raritan:
+    image: industrialdevops/flow-raritan:a36500bab7a0cd9ae2106edb95f9d77c8a7eff5c
     expose:
       - "8080"
     environment:
       KAFKA_BOOTSTRAP_SERVERS: kafka:9092
       KAFKA_TOPIC: input
-  titan-ccp-raritan-simulator:
+      TIMESTAMPS_IN_MS: "false"
+  raritan-simulator:
     image: industrialdevops/titan-ccp-raritan-simulator:20190405091811
     environment:
-      KIEKER_BRIDGE_ADDRESS: http://titan-ccp-record-bridge-raritan:8080/raritan
+      KIEKER_BRIDGE_ADDRESS: http://titan-flow-raritan:8080/raritan
+      LOG_LEVEL: debug
       SETUP: demo
