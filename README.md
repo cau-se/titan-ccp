@@ -1,44 +1,43 @@
+# Titan Control Center
 
-# Titan CCP
-
-The Titan Control Center Prototype (CCP) is a
-scalable monitoring infrastructure for [Industrial DevOps](https://industrial-devops.org/).
+The [Titan Control Center](https://ieeexplore.ieee.org/abstract/document/8822045)
+is a scalable monitoring infrastructure for [Industrial DevOps](https://industrial-devops.org/).
 It allows to monitor, analyze and visualize the electrical power consumption of
-devices and machines in industrial production environments such as factories.
+devices and machines in industrial production environments.
 
-The Titan CCP is designed in a microservice-based architecture augmented by big data
+The Titan Control Center is designed in a microservice-based architecture augmented by big data
 and stream processing techniques. The individual software components are located in separate
 Git repositories:
 
 * **[History](https://github.com/cau-se/titan-ccp-history)** The *History* microservice
-* **[Record Bridge](https://github.com/cau-se/titan-ccp-record-bridge)** The *Record Bridge* framework, microservices and related projects
-* **[Configuration](https://github.com/cau-se/titan-ccp-configuration)** The *Configuration* microservice
+* **[Aggregation](https://github.com/cau-se/titan-ccp-aggregation)** The *Aggregation* microservice
 * **[Statistics](https://github.com/cau-se/titan-ccp-stats)** The *Statistics* microservice
+* **[Configuration](https://github.com/cau-se/titan-ccp-configuration)** The *Configuration* microservice
 * **[Visualization](https://github.com/cau-se/titan-ccp-frontend)** Web-based *Visualization* and the corresponding backend
+* **[Record Bridge](https://github.com/cau-se/titan-ccp-record-bridge)** The *Record Bridge* framework, microservices and related projects
 * **[Common](https://github.com/cau-se/titan-ccp-common)** Library code and record definitions to be used by all microservices
 
-# Titan CCP - Deployment
+## Titan Control Center - Deployment
 
-This repository contains declarations for deploying the Titan CCP on a Kubernetes
+This repository contains declarations for deploying the Titan Control Center on a Kubernetes
 cluster or with Docker Compose.
 
-# Reference
+## Reference
 
-Please cite the Industrial DevOps approach, the Titan Project and Titan Control Center as follows:
+Please cite the Titan Control Center as follows:
 
-W. Hasselbring et al., Industrial DevOps 2019 IEEE International Conference on Software Architecture Companion (ICSA-C), Hamburg, Germany, 2019, pp. 123-126.
-DOI: [10.1109/ICSA-C.2019.00029](https://doi.org/10.1109/ICSA-C.2019.00029).
+S. Henning, W. Hasselbring and A. Möbius, *A Scalable Architecture for Power Consumption Monitoring in Industrial Production Environments*, 2019 IEEE International Conference on Fog Computing (ICFC), Prague, Czech Republic, 2019, pp. 124-133., Hamburg, Germany, 2019, pp. 123-126.
+DOI: [10.1109/ICFC.2019.00024](https://doi.org/10.1109/ICFC.2019.00024).
 
 BibTeX:
 
 ````bibtex
 @inproceedings{Hasselbring2019,
-    author={Wilhelm Hasselbring and S{\"o}ren Henning and Bj{\"o}rn  Latte and Armin M{\"o}bius and Thomas Richter and Stefan Schalk and Maik Wojcieszak},
-    booktitle={2019 IEEE International Conference on Software Architecture Companion (ICSA-C)},
-    title={Industrial DevOps},
+    author={Wilhelm Hasselbring and S{\"o}ren Henning and Armin M{\"o}bius},
+    booktitle={2019 IEEE International Conference on Fog Computing (ICFC)},
+    title={A Scalable Architecture for Power Consumption Monitoring in Industrial Production Environments},
     year={2019},
-    pages={123-126},
-    doi={10.1109/ICSA-C.2019.00029}, 
-    month={March}
-}
-````
+    pages={124-133},
+    doi={10.1109/ICFC.2019.00024}, 
+    month={June}
+}````
