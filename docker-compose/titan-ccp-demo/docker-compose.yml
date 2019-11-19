@@ -26,13 +26,13 @@ services:
     expose:
       - "6379"
   titan-ccp-aggregation:
-    image: industrialdevops/titan-ccp-aggregation:34179c7a389145933fa666cc62d1c5c031611d67
+    image: industrialdevops/titan-ccp-aggregation:30e3be7022a1405f383dc6811d72390a6817c963
     expose:
       - "80"
     environment:
       KAFKA_BOOTSTRAP_SERVERS: kafka:9092
   titan-ccp-history:
-    image: industrialdevops/titan-ccp-history:719aa88c1038ab6b80d2324ff4e65b74902e6597
+    image: industrialdevops/titan-ccp-history:34563eecd9123189065a8217024aa42dd84b3fd9
     expose:
       - "80"
     environment:
@@ -40,7 +40,7 @@ services:
       WEBSERVER_PORT: 80
       KAFKA_BOOTSTRAP_SERVERS: kafka:9092
   titan-ccp-stats:
-    image: industrialdevops/titan-ccp-stats:63ee5776b52136d0e6572fa8082aef6eb42ad709
+    image: industrialdevops/titan-ccp-stats:d1ac1923b23dd637f2a13eed3d0e7b87260fa599
     expose:
       - "80"
     environment:
