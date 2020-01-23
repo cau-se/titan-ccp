@@ -18,7 +18,7 @@ services:
       - zookeeper
       - kafka
     ports:
-      - "8083:8081" # because History service runs on local machine on 8081
+      - "8091:8081"
     environment:
       SCHEMA_REGISTRY_HOST_NAME: schema-registry
       SCHEMA_REGISTRY_KAFKASTORE_CONNECTION_URL: 'zookeeper:2181'
