@@ -26,7 +26,7 @@ services:
     expose:
       - "6379"
   titan-ccp-aggregation:
-    image: industrialdevops/titan-ccp-aggregation:30e3be7022a1405f383dc6811d72390a6817c963
+    image: industrialdevops/titan-ccp-aggregation:4146ce0d30daa3ac2d5495911bf00f5b4e2b7583
     expose:
       - "80"
     environment:
