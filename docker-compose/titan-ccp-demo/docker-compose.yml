@@ -39,6 +39,7 @@ services:
     image: industrialdevops/titan-ccp-aggregation:4146ce0d30daa3ac2d5495911bf00f5b4e2b7583
     expose:
       - "80"
+    mem_limit: 512m
     environment:
       KAFKA_BOOTSTRAP_SERVERS: kafka:9092
       SCHEMA_REGISTRY_URL: http://schema-registry:8081
@@ -46,18 +47,23 @@ services:
     image: industrialdevops/titan-ccp-history:34563eecd9123189065a8217024aa42dd84b3fd9
     expose:
       - "80"
+    mem_limit: 512m
     environment:
-      CASSANDRA_HOST: cassandra
       WEBSERVER_PORT: 80
+      CASSANDRA_HOST: cassandra
+      CASSANDRA_INIT_TIMEOUT_MS: 60000
       KAFKA_BOOTSTRAP_SERVERS: kafka:9092
       SCHEMA_REGISTRY_URL: http://schema-registry:8081
   titan-ccp-stats:
     image: industrialdevops/titan-ccp-stats:d1ac1923b23dd637f2a13eed3d0e7b87260fa599
+    #command: echo "disabled"
     expose:
       - "80"
+    mem_limit: 512m
     environment:
-      CASSANDRA_HOST: cassandra
       WEBSERVER_PORT: 80
+      CASSANDRA_HOST: cassandra
+      CASSANDRA_INIT_TIMEOUT_MS: 60000
       KAFKA_BOOTSTRAP_SERVERS: kafka:9092
       KAFKA_TOPIC_ACTIVEPOWER: input
       KAFKA_TOPIC_AGGRACTIVEPOWER: output
@@ -93,5 +99,5 @@ services:
     image: industrialdevops/titan-ccp-raritan-simulator:20190405091811
     environment:
       KIEKER_BRIDGE_ADDRESS: http://titan-flow-raritan:8080/raritan
-      LOG_LEVEL: debug
+      LOG_LEVEL: info
       SETUP: demo
