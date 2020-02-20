@@ -11,7 +11,7 @@ services:
     environment:
       KAFKA_ADVERTISED_HOST_NAME: kafka
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
-      KAFKA_CREATE_TOPICS: "input:3:1,output:3:1,configuration:3:1"
+      KAFKA_CREATE_TOPICS: "input:3:1,output:3:1,configuration:3:1,aggregation-feedback:3:1"
       KAFKA_LOG_RETENTION_HOURS: 1
   schema-registry:
     image: confluentinc/cp-schema-registry:5.3.1
@@ -36,15 +36,17 @@ services:
     expose:
       - "6379"
   titan-ccp-aggregation:
-    image: industrialdevops/titan-ccp-aggregation:097afd2fc9c3909a5d7d5987719b4f885ab8eed3
+    image: industrialdevops/titan-ccp-aggregation:c2ad6c91048f9fbaa2a0d77601a55a5db4049f6c
     expose:
       - "80"
     mem_limit: 512m
     environment:
       KAFKA_BOOTSTRAP_SERVERS: kafka:9092
       SCHEMA_REGISTRY_URL: http://schema-registry:8081
+      EMIT_PERIOD_MS: 3000
+      GRACE_PERIOD_MS: 5000
   titan-ccp-history:
-    image: industrialdevops/titan-ccp-history:06273f1f2914ad62b6533250b2e13cf9c6fa4e02
+    image: industrialdevops/titan-ccp-history:79db149a476ac7df37ecfa3663134b8077709dfe
     expose:
       - "80"
     mem_limit: 512m
@@ -95,7 +97,7 @@ services:
       SCHEMA_REGISTRY_URL: http://schema-registry:8081
       TIMESTAMPS_IN_MS: "false"
   raritan-simulator:
-    image: industrialdevops/titan-ccp-raritan-simulator:20190405091811
+    image: industrialdevops/titan-ccp-raritan-simulator:9ab4ad56465def675c5952e27fa393edb04297e4
     environment:
       KIEKER_BRIDGE_ADDRESS: http://titan-flow-raritan:8080/raritan
       LOG_LEVEL: info
