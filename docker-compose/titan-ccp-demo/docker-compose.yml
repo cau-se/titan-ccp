@@ -36,7 +36,7 @@ services:
     expose:
       - "6379"
   titan-ccp-aggregation:
-    image: industrialdevops/titan-ccp-aggregation:c2ad6c91048f9fbaa2a0d77601a55a5db4049f6c
+    image: industrialdevops/titan-ccp-aggregation:79f2cae7e57c3c2063e773a7e957798cca9463ed
     expose:
       - "80"
     mem_limit: 512m
@@ -57,7 +57,7 @@ services:
       KAFKA_BOOTSTRAP_SERVERS: kafka:9092
       SCHEMA_REGISTRY_URL: http://schema-registry:8081
   titan-ccp-stats:
-    image: industrialdevops/titan-ccp-stats:1d8a38024a2a4b42af155fa7255022216bfc0892
+    image: industrialdevops/titan-ccp-stats:2da55af0956463d229e898601bd34ee4d05174a4
     expose:
       - "80"
     mem_limit: 512m
@@ -88,7 +88,7 @@ services:
       HISTORY_BASE_URL: "http://titan-ccp-history:80"
       STATS_BASE_URL: "http://titan-ccp-stats:80"
   titan-flow-raritan:
-    image: industrialdevops/flow-raritan:917014aab090b72286846b4f2e9dce3f955f2245
+    image: industrialdevops/flow-raritan:80a6cdf71cbcfc983b3a2e90b3d36001f138f195
     expose:
       - "8080"
     environment:
@@ -97,8 +97,7 @@ services:
       SCHEMA_REGISTRY_URL: http://schema-registry:8081
       TIMESTAMPS_IN_MS: "false"
   raritan-simulator:
-    image: industrialdevops/titan-ccp-raritan-simulator:9ab4ad56465def675c5952e27fa393edb04297e4
+    image: industrialdevops/titan-ccp-raritan-simulator:c06b75cb100eb3cf808f99ffff1570dde09c612a
     environment:
-      KIEKER_BRIDGE_ADDRESS: http://titan-flow-raritan:8080/raritan
+      PUSH_ADDRESS: http://titan-flow-raritan:8080/raritan
       LOG_LEVEL: info
-      SETUP: demo
