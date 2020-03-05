@@ -91,6 +91,7 @@ services:
     image: industrialdevops/flow-raritan:80a6cdf71cbcfc983b3a2e90b3d36001f138f195
     expose:
       - "8080"
+    mem_limit: 512m
     environment:
       KAFKA_BOOTSTRAP_SERVERS: kafka:9092
       KAFKA_TOPIC: input
