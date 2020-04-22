@@ -90,6 +90,10 @@ services:
       STATS_BASE_URL: "http://titan-ccp-stats:80"
   titan-flow-raritan:
     image: industrialdevops/flow-raritan:80a6cdf71cbcfc983b3a2e90b3d36001f138f195
+    depends_on:
+      - zookeeper
+      - kafka
+      - schema-registry
     expose:
       - "8080"
     mem_limit: 512m
