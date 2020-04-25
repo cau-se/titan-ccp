@@ -89,7 +89,7 @@ services:
       HISTORY_BASE_URL: "http://titan-ccp-history:80"
       STATS_BASE_URL: "http://titan-ccp-stats:80"
   titan-flow-raritan:
-    image: industrialdevops/flow-raritan:80a6cdf71cbcfc983b3a2e90b3d36001f138f195
+    image: industrialdevops/flow-raritan:8c7c1f8051d04c0a6c37b9ea33a49fa31be44fc7
     depends_on:
       - zookeeper
       - kafka
