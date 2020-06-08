@@ -32,10 +32,16 @@ services:
       MAX_HEAP_SIZE: 512M
       HEAP_NEWSIZE: 128M
     mem_limit: 1024m
-  redis:
-    image: redis
+  mongodb:
+    image: bitnami/mongodb:latest
     expose:
-      - "6379"
+      - "27017"
+    environment:
+      MONGODB_REPLICA_SET_MODE: primary
+      MONGODB_REPLICA_SET_NAME: rs0
+      MONGODB_REPLICA_SET_KEY: replicaset
+      MONGODB_ADVERTISED_HOSTNAME: mongodb
+      MONGODB_ROOT_PASSWORD: password
   titan-ccp-aggregation:
     image: industrialdevops/titan-ccp-aggregation:79f2cae7e57c3c2063e773a7e957798cca9463ed
     expose:
@@ -70,22 +76,21 @@ services:
       KAFKA_TOPIC_ACTIVEPOWER: input
       KAFKA_TOPIC_AGGRACTIVEPOWER: output
       SCHEMA_REGISTRY_URL: http://schema-registry:8081
-  titan-ccp-configuration:
-    image: industrialdevops/titan-ccp-configuration:e062b239d98cbd33bd80f7a43046c9ad5f85ce21
+  titan-ccp-sensor-management:
+    image: industrialdevops/titan-ccp-configuration:sensor-management-service-fa6046d994a6fcc6e303bcc5e99b3d9d6cbc41ce
     expose:
       - "80"
     environment:
-      REDIS_HOST: redis
+      MONGODB_CONNECTION_URL: mongodb://root:password@mongodb:27017/?replicaSet=rs0
       KAFKA_BOOTSTRAP_SERVERS: kafka:9092
-      STARTUP_WAIT_MS: 30000
       DEMO: "true"
   titan-ccp-frontend:
-    image: industrialdevops/titan-ccp-frontend:c9ee49ea8835df9f86eec7ad1e33a5f479462598
+    image: industrialdevops/titan-ccp-frontend:sensor-management-service-4d9d33f5fc263adfe87eacffae5ce71b81d00626
     ports:
       - "8185:8080"
     environment:
       DEMO: "true"
-      CONFIGURATION_BASE_URL: "http://titan-ccp-configuration:80"
+      SENSOR_MANAGEMENT_BASE_URL: "http://titan-ccp-sensor-management:80"
       HISTORY_BASE_URL: "http://titan-ccp-history:80"
       STATS_BASE_URL: "http://titan-ccp-stats:80"
   titan-flow-raritan:
