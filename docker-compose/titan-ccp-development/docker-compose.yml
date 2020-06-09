@@ -31,7 +31,13 @@ services:
       MAX_HEAP_SIZE: 512M
       HEAP_NEWSIZE: 128M
     mem_limit: 1024m
-  redis:
-    image: redis
+  mongodb:
+    image: bitnami/mongodb:latest
     ports:
-      - "6379:6379"
+      - "27017:27017"
+    environment:
+      MONGODB_REPLICA_SET_MODE: primary
+      MONGODB_REPLICA_SET_NAME: rs0
+      MONGODB_REPLICA_SET_KEY: replicaset
+      MONGODB_ADVERTISED_HOSTNAME: localhost
+      MONGODB_ROOT_PASSWORD: password

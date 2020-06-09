@@ -12,7 +12,7 @@ Git repositories:
 * **[History](https://github.com/cau-se/titan-ccp-history)** The *History* microservice
 * **[Aggregation](https://github.com/cau-se/titan-ccp-aggregation)** The *Aggregation* microservice
 * **[Statistics](https://github.com/cau-se/titan-ccp-stats)** The *Statistics* microservice
-* **[Configuration](https://github.com/cau-se/titan-ccp-configuration)** The *Configuration* microservice
+* **[Sensor Management](https://github.com/cau-se/titan-ccp-sensor-management)** The *Sensor Management* microservice
 * **[Visualization](https://github.com/cau-se/titan-ccp-frontend)** Web-based *Visualization* and the corresponding backend
 * **[Record Bridge](https://github.com/cau-se/titan-ccp-record-bridge)** The *Record Bridge* framework, microservices and related projects
 * **[Common](https://github.com/cau-se/titan-ccp-common)** Library code and record definitions to be used by all microservices
