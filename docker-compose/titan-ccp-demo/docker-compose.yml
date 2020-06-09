@@ -37,7 +37,7 @@ services:
     expose:
       - "6379"
   titan-ccp-aggregation:
-    image: industrialdevops/titan-ccp-aggregation:79f2cae7e57c3c2063e773a7e957798cca9463ed
+    image: industrialdevops/titan-ccp-aggregation:118db34330e1a46643c20a359ac18ef738db3118
     expose:
       - "80"
     mem_limit: 512m
@@ -47,7 +47,7 @@ services:
       EMIT_PERIOD_MS: 10000
       GRACE_PERIOD_MS: 10000
   titan-ccp-history:
-    image: industrialdevops/titan-ccp-history:79db149a476ac7df37ecfa3663134b8077709dfe
+    image: industrialdevops/titan-ccp-history:1c16d4b50ab1b4a5dd6ecee775cee7936bd2e1dc
     expose:
       - "80"
     mem_limit: 512m
@@ -58,7 +58,7 @@ services:
       KAFKA_BOOTSTRAP_SERVERS: kafka:9092
       SCHEMA_REGISTRY_URL: http://schema-registry:8081
   titan-ccp-stats:
-    image: industrialdevops/titan-ccp-stats:2da55af0956463d229e898601bd34ee4d05174a4
+    image: industrialdevops/titan-ccp-stats:42560eb3bbe00a6fdfbf3887b8e9a36d3681f410
     expose:
       - "80"
     mem_limit: 512m
