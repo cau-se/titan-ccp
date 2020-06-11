@@ -19,8 +19,8 @@ Git repositories:
 
 ## Titan Control Center - Deployment
 
-This repository contains declarations for deploying the Titan Control Center on a Kubernetes
-cluster or with Docker Compose.
+This repository contains declarations for deploying the Titan Control Center with [Docker Compose](docker-compose)
+or in a [cloud environment operated by Kubernetes](kubernetes).
 
 ## Reference
 
