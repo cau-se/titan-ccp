@@ -1,7 +1,7 @@
 apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
 kind: Deployment
 metadata:
-  name: titan-ccp-history
+  name: titan-ccp-aggregation
 spec:
   selector:
     matchLabels:
@@ -25,4 +25,4 @@ spec:
         - name: GRACE_PERIOD_MS
           value: "10000"
         - name: SCHEMA_REGISTRY_URL
-          values: "http://my-confluent-cp-schema-registry:8081"
+          value: "http://my-confluent-cp-schema-registry:8081"

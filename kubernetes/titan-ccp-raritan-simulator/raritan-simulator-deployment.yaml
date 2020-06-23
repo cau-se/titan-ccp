@@ -19,6 +19,6 @@ spec:
         image: industrialdevops/titan-ccp-raritan-simulator:c06b75cb100eb3cf808f99ffff1570dde09c612a
         env:
         - name: PUSH_ADDRESS
-          value: "titan-flow-raritan:8080"
+          value: "http://titan-flow-raritan-service:8080/raritan"
         - name: LOG_LEVEL
-          value: "info"
+          value: "debug"

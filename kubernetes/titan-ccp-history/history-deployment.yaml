@@ -25,4 +25,6 @@ spec:
         - name: KAFKA_BOOTSTRAP_SERVERS
           value: "my-confluent-cp-kafka:9092"
         - name: SCHEMA_REGISTRY_URL
-          values: "http://my-confluent-cp-schema-registry:8081"
+          value: "http://my-confluent-cp-schema-registry:8081"
+        - name: CASSANDRA_INIT_TIMEOUT_MS
+          value: "60000"
