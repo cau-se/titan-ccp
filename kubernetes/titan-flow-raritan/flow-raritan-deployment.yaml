@@ -1,0 +1,27 @@
+kind: Deployment
+metadata:
+  name: titan-flow-raritan
+spec:
+  selector:
+    matchLabels:
+      app: titan-flow-raritan
+  replicas: 1 # tells deployment to run 2 pods matching the template
+  template: # create pods using pod definition in this template
+    metadata:
+      # unlike pod-nginx.yaml, the name is not included in the meta data as a unique name is
+      # generated from the deployment name
+      labels:
+        app: titan-flow-raritan
+    spec:
+      containers:
+      - name: titan-flow-raritan
+        image: industrialdevops/flow-raritan:8c7c1f8051d04c0a6c37b9ea33a49fa31be44fc7
+        env:
+        - name: KAFKA_BOOTSTRAP_SERVERS
+          value: "bootstrap:9092"
+        - name: KAFKA_TOPIC
+          value: "input"
+        - name: SCHEMA_REGISTRY_URL
+          value: http://schema-registry:8081 # TODO replace with correct url
+        - name: TIMESTAMPS_IN_MS
+          value: "false"
