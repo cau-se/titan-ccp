@@ -73,7 +73,7 @@ usePassword: true
 ## MongoDB admin password
 ## ref: https://github.com/bitnami/bitnami-docker-mongodb/blob/master/README.md#setting-the-root-password-on-first-run
 ##
-# mongodbRootPassword:
+mongodbRootPassword: password
 
 ## MongoDB custom user and database
 ## ref: https://github.com/bitnami/bitnami-docker-mongodb/blob/master/README.md#creating-a-user-and-database-on-first-run
@@ -164,7 +164,7 @@ replicaSet:
 
   ## Key used for replica set authentication
   ##
-  # key: key
+  key: replicaset
 
   ## Number of replicas per each node type
   ##
