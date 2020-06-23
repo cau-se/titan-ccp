@@ -23,10 +23,10 @@ spec:
         - name: WEBSERVER_PORT
           value: "80"
         - name: KAFKA_BOOTSTRAP_SERVERS
-          value: "bootstrap:9092"
+          value: "my-confluent-cp-kafka:9092"
         - name: KAFKA_TOPIC_ACTIVEPOWER
           value: "input"
         - name: KAFKA_TOPIC_AGGRACTIVEPOWER
           value: "output"
         - name: SCHEMA_REGISTRY_URL
-          value: http://schema-registry:8081 # TODO replace with correct url
+          value: "http://my-confluent-cp-schema-registry:8081"

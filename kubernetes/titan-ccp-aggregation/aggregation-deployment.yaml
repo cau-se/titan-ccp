@@ -19,10 +19,10 @@ spec:
         image: industrialdevops/titan-ccp-aggregation:118db34330e1a46643c20a359ac18ef738db3118
         env:
         - name: KAFKA_BOOTSTRAP_SERVERS
-          value: "bootstrap:9092"
+          value: "my-confluent-cp-kafka:9092"
         - name: EMIT_PERIOD_MS
           value: "10000"
         - name: GRACE_PERIOD_MS
           value: "10000"
         - name: SCHEMA_REGISTRY_URL
-          values: http://schema-registry:8081 # TODO replace with correct url
+          values: "http://my-confluent-cp-schema-registry:8081"
