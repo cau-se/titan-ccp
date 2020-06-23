@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: titan-ccp-stats
-        image: industrialdevops/titan-ccp-stats:5e3bb5632b52057d48f14cbec6b816dd4004266c
+        image: industrialdevops/titan-ccp-stats:42560eb3bbe00a6fdfbf3887b8e9a36d3681f410
         env:
         - name: CASSANDRA_HOST
           value: "cassandra"
@@ -28,3 +28,5 @@ spec:
           value: "input"
         - name: KAFKA_TOPIC_AGGRACTIVEPOWER
           value: "output"
+        - name: SCHEMA_REGISTRY_URL
+          value: http://schema-registry:8081 # TODO replace with correct url
