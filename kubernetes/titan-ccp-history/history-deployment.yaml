@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: titan-ccp-history
-        image: industrialdevops/titan-ccp-history:9fcfaea1917731f5807ccd773722f678e5b1249a
+        image: industrialdevops/titan-ccp-history:1c16d4b50ab1b4a5dd6ecee775cee7936bd2e1dc
         env:
         - name: CASSANDRA_HOST
           value: "cassandra"
@@ -24,7 +24,5 @@ spec:
           value: "80"
         - name: KAFKA_BOOTSTRAP_SERVERS
           value: "bootstrap:9092"
-        - name: CONFIGURATION_HOST
-          value: "titan-ccp-configuration"
-        - name: CONFIGURATION_PORT
-          value: "80"
+        - name: SCHEMA_REGISTRY_URL
+          values: http://schema-registry:8081 # TODO replace with correct url
