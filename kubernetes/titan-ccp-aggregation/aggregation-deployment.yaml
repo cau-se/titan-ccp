@@ -26,3 +26,5 @@ spec:
           value: "10000"
         - name: SCHEMA_REGISTRY_URL
           value: "http://my-confluent-cp-schema-registry:8081"
+        - name: COMMIT_INTERVAL_MS
+          value: "10"
