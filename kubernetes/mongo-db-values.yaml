@@ -169,16 +169,16 @@ replicaSet:
   ## Number of replicas per each node type
   ##
   replicas:
-    secondary: 1
-    arbiter: 1
+    secondary: 0
+    arbiter: 0
 
   ## Pod Disruption Budget
   ## ref: https://kubernetes.io/docs/concepts/workloads/pods/disruptions/
   pdb:
-    enabled: true
+    enabled: false
     minAvailable:
-      secondary: 1
-      arbiter: 1
+      secondary: 0
+      arbiter: 0
     # maxUnavailable:
       # secondary: 1
       # arbiter: 1
@@ -280,7 +280,7 @@ updateStrategy:
 ## ref: http://kubernetes.io/docs/user-guide/persistent-volumes/
 ##
 persistence:
-  enabled: true
+  enabled: false
   ## A manually managed Persistent Volume and Claim
   ## Requires persistence.enabled: true
   ## If defined, PVC must be created manually before volume will be bound
