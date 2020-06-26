@@ -21,7 +21,7 @@ spec:
         - name: WEBSERVER_PORT
           value: "80"
         - name: MONGODB_CONNECTION_URL
-          value: "mongodb://root:password@mongo-mongodb.default.svc.cluster.local:27017/?replicaSet=rs0"
+          value: "mongodb://root:password@mongo-mongodb:27017/?replicaSet=rs0"
         - name: KAFKA_BOOTSTRAP_SERVERS
           value: "my-confluent-cp-kafka:9092"
         - name: DEMO
