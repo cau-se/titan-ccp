@@ -66,7 +66,7 @@ cp-kafka:
     #offsets.topic.replication.factor: 1
     "message.max.bytes": "134217728" # 128 MB
     "replica.fetch.max.bytes": "134217728" # 128 MB
-    default.replication.factor: 1
+    default.replication.factor: 3
     # "min.insync.replicas": 2
     # "auto.create.topics.enable": false
     "log.retention.ms": "10000" # 10s
