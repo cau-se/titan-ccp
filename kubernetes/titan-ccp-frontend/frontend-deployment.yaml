@@ -17,7 +17,7 @@ spec:
         image: industrialdevops/titan-ccp-frontend:1f021d328a6e00719a6ccb256e931b45e09d62fd
         env:
         - name: DEMO
-          value: "true"
+          value: "false"
         - name: CONFIGURATION_BASE_URL
           value: "http://titan-ccp-sensor-management:80"
         - name: HISTORY_BASE_URL
