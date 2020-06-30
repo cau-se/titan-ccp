@@ -26,7 +26,7 @@ or in a [cloud environment operated by Kubernetes](kubernetes).
 
 Please cite the Titan Control Center as follows:
 
-S. Henning, W. Hasselbring and A. Möbius, *A Scalable Architecture for Power Consumption Monitoring in Industrial Production Environments*, 2019 IEEE International Conference on Fog Computing (ICFC), Prague, Czech Republic, 2019, pp. 124-133., Hamburg, Germany, 2019, pp. 123-126.
+S. Henning, W. Hasselbring and A. Möbius, *A Scalable Architecture for Power Consumption Monitoring in Industrial Production Environments*, 2019 IEEE International Conference on Fog Computing (ICFC), Prague, Czech Republic, 2019, pp. 124-133.
 DOI: [10.1109/ICFC.2019.00024](https://doi.org/10.1109/ICFC.2019.00024).
 
 BibTeX:
