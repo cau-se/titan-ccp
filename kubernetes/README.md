@@ -101,6 +101,12 @@ Create the Raritan Flow:
 kubectl apply -f titan-flow-raritan/
 ```
 
+## The Raritan Simulator
+
+```sh
+kubectl apply -f titan-ccp-raritan-simulator/
+```
+
 ## The Titan Control Center Frontend
 
 Create the Frontend:
