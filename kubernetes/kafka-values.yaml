@@ -3,7 +3,7 @@
 ## ------------------------------------------------------
 cp-zookeeper:
   enabled: true
-  servers: 3 # default: 3 
+  servers: 3
   image: confluentinc/cp-zookeeper
   imageTag: 5.4.0
   ## Optionally specify an array of imagePullSecrets. Secrets must be manually created in the namespace.
@@ -13,16 +13,6 @@ cp-zookeeper:
   heapOptions: "-Xms512M -Xmx512M"
   persistence:
     enabled: false
-    ## The size of the PersistentVolume to allocate to each Zookeeper Pod in the StatefulSet. For
-    ## production servers this number should likely be much larger.
-    ##
-    ## Size for Data dir, where ZooKeeper will store the in-memory database snapshots.
-    dataDirSize: 10Gi
-    # dataDirStorageClass: ""
-
-    ## Size for data log dir, which is a dedicated log device to be used, and helps avoid competition between logging and snaphots.
-    dataLogDirSize: 10Gi
-    # dataLogDirStorageClass: ""
   resources: {}
   ## If you do want to specify resources, uncomment the following lines, adjust them as necessary,
   ## and remove the curly braces after 'resources:'
@@ -38,7 +28,7 @@ cp-zookeeper:
 ## ------------------------------------------------------
 cp-kafka:
   enabled: true
-  brokers: 3
+  brokers: 10
   image: confluentinc/cp-enterprise-kafka
   imageTag: 5.4.0
   ## Optionally specify an array of imagePullSecrets. Secrets must be manually created in the namespace.
@@ -48,9 +38,6 @@ cp-kafka:
   heapOptions: "-Xms512M -Xmx512M"
   persistence:
     enabled: false
-    # storageClass: ""
-    size: 5Gi
-    disksPerBroker: 1
   resources: {}
   ## If you do want to specify resources, uncomment the following lines, adjust them as necessary,
   ## and remove the curly braces after 'resources:'
@@ -59,28 +46,16 @@ cp-kafka:
   #   memory: 128Mi
   #  requests:
   #   cpu: 100m
-  #   memory: 128Mi
-
-  
+  #   memory: 128Mi  
   configurationOverrides:
     #offsets.topic.replication.factor: 1
     "message.max.bytes": "134217728" # 128 MB
     "replica.fetch.max.bytes": "134217728" # 128 MB
-    default.replication.factor: 3
+    # default.replication.factor: 3
     # "min.insync.replicas": 2
     # "auto.create.topics.enable": false
     "log.retention.ms": "10000" # 10s
     "metrics.sample.window.ms": "5000" #5s
-    "advertised.listeners": |-
-      EXTERNAL://${HOST_IP}:$((31090 + ${KAFKA_BROKER_ID}))
-    "listener.security.protocol.map": |-
-      PLAINTEXT:PLAINTEXT,EXTERNAL:PLAINTEXT
-  
-  nodeport:
-    enabled: true
-    servicePort: 19092
-    firstListenerPort: 31090
-
 
 ## ------------------------------------------------------
 ## Schema Registry
@@ -94,15 +69,7 @@ cp-schema-registry:
   imagePullSecrets:
   #  - name: "regcred"
   heapOptions: "-Xms512M -Xmx512M"
-  resources: {}
-  
-  external:
-    enabled: true
-    type: NodePort
-    servicePort: 8081
-    nodePort: 30099 # davor wars 1 konflikt mit kafka 31091
-    annotations: {}
-  
+  resources: {} 
   ## If you do want to specify resources, uncomment the following lines, adjust them as necessary,
   ## and remove the curly braces after 'resources:'
   #  limits:
@@ -112,83 +79,14 @@ cp-schema-registry:
   #   cpu: 100m
   #   memory: 128Mi
 
-## ------------------------------------------------------
-## REST Proxy
-## ------------------------------------------------------
 cp-kafka-rest:
   enabled: false
-  image: confluentinc/cp-kafka-rest
-  imageTag: 5.4.0
-  ## Optionally specify an array of imagePullSecrets. Secrets must be manually created in the namespace.
-  ## https://kubernetes.io/docs/concepts/containers/images/#specifying-imagepullsecrets-on-a-pod
-  imagePullSecrets:
-  #  - name: "regcred"
-  heapOptions: "-Xms512M -Xmx512M"
-  resources: {}
-  ## If you do want to specify resources, uncomment the following lines, adjust them as necessary,
-  ## and remove the curly braces after 'resources:'
-  #  limits:
-  #   cpu: 100m
-  #   memory: 128Mi
-  #  requests:
-  #   cpu: 100m
-  #   memory: 128Mi
 
-## ------------------------------------------------------
-## Kafka Connect
-## ------------------------------------------------------
 cp-kafka-connect:
   enabled: false
-  image: confluentinc/cp-kafka-connect
-  imageTag: 5.4.0
-  ## Optionally specify an array of imagePullSecrets. Secrets must be manually created in the namespace.
-  ## https://kubernetes.io/docs/concepts/containers/images/#specifying-imagepullsecrets-on-a-pod
-  imagePullSecrets:
-  #  - name: "regcred"
-  heapOptions: "-Xms512M -Xmx512M"
-  resources: {}
-  ## If you do want to specify resources, uncomment the following lines, adjust them as necessary,
-  ## and remove the curly braces after 'resources:'
-  #  limits:
-  #   cpu: 100m
-  #   memory: 128Mi
-  #  requests:
-  #   cpu: 100m
-  #   memory: 128Mi
 
-## ------------------------------------------------------
-## KSQL Server
-## ------------------------------------------------------
 cp-ksql-server:
   enabled: false
-  image: confluentinc/cp-ksql-server
-  imageTag: 5.4.0
-  ## Optionally specify an array of imagePullSecrets. Secrets must be manually created in the namespace.
-  ## https://kubernetes.io/docs/concepts/containers/images/#specifying-imagepullsecrets-on-a-pod
-  imagePullSecrets:
-  #  - name: "regcred"
-  heapOptions: "-Xms512M -Xmx512M"
-  ksql:
-    headless: false
 
-## ------------------------------------------------------
-## Control Center
-## ------------------------------------------------------
 cp-control-center:
   enabled: false
-  image: confluentinc/cp-enterprise-control-center
-  imageTag: 5.2.0
-  ## Optionally specify an array of imagePullSecrets. Secrets must be manually created in the namespace.
-  ## https://kubernetes.io/docs/concepts/containers/images/#specifying-imagepullsecrets-on-a-pod
-  imagePullSecrets:
-  #  - name: "regcred"
-  heapOptions: "-Xms512M -Xmx512M"
-  resources: {}
-  ## If you do want to specify resources, uncomment the following lines, adjust them as necessary,
-  ## and remove the curly braces after 'resources:'
-  #  limits:
-  #   cpu: 100m
-  #   memory: 128Mi
-  #  requests:
-  #   cpu: 100m
-  #   memory: 128Mi
