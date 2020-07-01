@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: titan-ccp-frontend
-        image: industrialdevops/titan-ccp-frontend:1f021d328a6e00719a6ccb256e931b45e09d62fd
+        image: industrialdevops/titan-ccp-frontend:a8d66b95fe2dced5267a0fc07ccaf5ecc0842e76
         env:
         - name: DEMO
           value: "false"

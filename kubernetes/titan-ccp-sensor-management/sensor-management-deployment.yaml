@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: titan-ccp-sensor-management
-        image: industrialdevops/titan-ccp-sensor-management:ffda14a3d0e97bb44fc572c9eef132abf384269a
+        image: industrialdevops/titan-ccp-sensor-management:4344cb28a6c60390d0df5ff6c022ba94b8a5ce9a
         env:
         - name: WEBSERVER_PORT
           value: "80"
@@ -25,4 +25,4 @@ spec:
         - name: KAFKA_BOOTSTRAP_SERVERS
           value: "my-confluent-cp-kafka:9092"
         - name: DEMO
-          value: "false"
+          value: "true"

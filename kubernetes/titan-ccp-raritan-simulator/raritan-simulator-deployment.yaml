@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: titan-ccp-raritan-simulator
-        image: industrialdevops/titan-ccp-raritan-simulator:c06b75cb100eb3cf808f99ffff1570dde09c612a
+        image: industrialdevops/titan-ccp-raritan-simulator:d7e4fde3880fee8922d836d54e6a11814736d93f
         env:
         - name: PUSH_ADDRESS
           value: "http://titan-flow-raritan-service:8080/raritan"

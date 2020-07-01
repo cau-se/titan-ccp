@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: titan-ccp-history
-        image: industrialdevops/titan-ccp-history:1c16d4b50ab1b4a5dd6ecee775cee7936bd2e1dc
+        image: industrialdevops/titan-ccp-history:823c58f3df87192b94e982ec32e038e1f011b71d
         env:
         - name: CASSANDRA_HOST
           value: "cassandra"
