@@ -14,12 +14,12 @@ spec:
     spec:
       containers:
       - name: titan-ccp-frontend
-        image: industrialdevops/titan-ccp-frontend:8e5a110c6f6f8a4ec9dfa28e9a88dbc57fdc635c
+        image: industrialdevops/titan-ccp-frontend:a8d66b95fe2dced5267a0fc07ccaf5ecc0842e76
         env:
         - name: DEMO
-          value: "true"
+          value: "false"
         - name: CONFIGURATION_BASE_URL
-          value: "http://titan-ccp-configuration:80"
+          value: "http://titan-ccp-sensor-management:80"
         - name: HISTORY_BASE_URL
           value: "http://titan-ccp-history:80"
         - name: STATS_BASE_URL
