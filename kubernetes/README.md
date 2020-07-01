@@ -1,6 +1,6 @@
 # Titan Control Center
 
-This diirectory contains all configuration files to run the Titan Control Center in Kubernetes.
+This directory contains all configuration files to run the Titan Control Center in Kubernetes.
 
 The following components are required to start the Control Center.
 First, Kafka and the databases should be started. Afterwards the respective microservices can be executed.
