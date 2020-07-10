@@ -52,10 +52,10 @@ Add Repository:
 helm repo add bitnami https://charts.bitnami.com/bitnami
 ```
 
-Install MongoDB via Helm:
+Install MongoDB via Helm (please note: chart version is required):
 
 ```sh
-helm  install mongo bitnami/mongodb -f mongo-db-values.yaml
+helm  install mongo bitnami/mongodb -f mongo-db-values.yaml --version 7.8.10
 ```
 
 ## Cassandra
