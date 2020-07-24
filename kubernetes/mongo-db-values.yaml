@@ -1,0 +1,76 @@
+image:
+  registry: docker.io
+  repository: bitnami/mongodb
+  tag: 4.2.4-debian-10-r0
+  pullPolicy: IfNotPresent
+  ## Set to true if you would like to see extra information on logs
+  ## It turns on Bitnami debugging in minideb-extras-base
+  ## ref:  https://github.com/bitnami/minideb-extras-base
+  debug: false
+
+## Enable authentication
+## ref: https://docs.mongodb.com/manual/tutorial/enable-authentication/
+#
+usePassword: true
+# existingSecret: name-of-existing-secret
+
+## MongoDB admin password
+## ref: https://github.com/bitnami/bitnami-docker-mongodb/blob/master/README.md#setting-the-root-password-on-first-run
+##
+mongodbRootPassword: password
+
+## Setting up replication
+## ref: https://github.com/bitnami/bitnami-docker-mongodb#setting-up-a-replication
+#
+replicaSet:
+  ## Whether to create a MongoDB replica set for high availability or not
+  enabled: true
+  useHostnames: true
+
+  ## Name of the replica set
+  ##
+  name: rs0
+
+  ## Key used for replica set authentication
+  ##
+  key: replicaset
+
+  ## Number of replicas per each node type
+  ##
+  replicas:
+    secondary: 0
+    arbiter: 0
+
+## Enable persistence using Persistent Volume Claims
+## ref: http://kubernetes.io/docs/user-guide/persistent-volumes/
+##
+persistence:
+  enabled: false
+  ## A manually managed Persistent Volume and Claim
+  ## Requires persistence.enabled: true
+  ## If defined, PVC must be created manually before volume will be bound
+  ##
+  # existingClaim:
+
+  ## The path the volume will be mounted at, useful when using different
+  ## MongoDB images.
+  ##
+  mountPath: /bitnami/mongodb
+
+  ## The subdirectory of the volume to mount to, useful in dev environments
+  ## and one PV for multiple services.
+  ##
+  subPath: ""
+
+  ## mongodb data Persistent Volume Storage Class
+  ## If defined, storageClassName: <storageClass>
+  ## If set to "-", storageClassName: "", which disables dynamic provisioning
+  ## If undefined (the default) or set to null, no storageClassName spec is
+  ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
+  ##   GKE, AWS & OpenStack)
+  ##
+  # storageClass: "-"
+  accessModes:
+    - ReadWriteOnce
+  size: 8Gi
+  annotations: {}

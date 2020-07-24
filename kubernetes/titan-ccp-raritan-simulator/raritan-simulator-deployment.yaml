@@ -16,11 +16,9 @@ spec:
     spec:
       containers:
       - name: titan-ccp-raritan-simulator
-        image: industrialdevops/titan-ccp-raritan-simulator:20190405091811
+        image: industrialdevops/titan-ccp-raritan-simulator:d7e4fde3880fee8922d836d54e6a11814736d93f
         env:
-        - name: KIEKER_BRIDGE_ADDRESS
-          value: "http://titan-ccp-kieker-bridge-raritan:8080/raritan"
-        - name: SETUP
-          value: "demo"
+        - name: PUSH_ADDRESS
+          value: "http://titan-flow-raritan-service:8080/raritan"
         - name: LOG_LEVEL
           value: "info"

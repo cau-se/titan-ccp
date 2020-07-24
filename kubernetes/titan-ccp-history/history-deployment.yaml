@@ -16,15 +16,15 @@ spec:
     spec:
       containers:
       - name: titan-ccp-history
-        image: industrialdevops/titan-ccp-history:9fcfaea1917731f5807ccd773722f678e5b1249a
+        image: industrialdevops/titan-ccp-history:823c58f3df87192b94e982ec32e038e1f011b71d
         env:
         - name: CASSANDRA_HOST
           value: "cassandra"
         - name: WEBSERVER_PORT
           value: "80"
         - name: KAFKA_BOOTSTRAP_SERVERS
-          value: "bootstrap:9092"
-        - name: CONFIGURATION_HOST
-          value: "titan-ccp-configuration"
-        - name: CONFIGURATION_PORT
-          value: "80"
+          value: "my-confluent-cp-kafka:9092"
+        - name: SCHEMA_REGISTRY_URL
+          value: "http://my-confluent-cp-schema-registry:8081"
+        - name: CASSANDRA_INIT_TIMEOUT_MS
+          value: "60000"

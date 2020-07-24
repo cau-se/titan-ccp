@@ -77,7 +77,7 @@ services:
       KAFKA_TOPIC_AGGRACTIVEPOWER: output
       SCHEMA_REGISTRY_URL: http://schema-registry:8081
   titan-ccp-sensor-management:
-    image: industrialdevops/titan-ccp-sensor-management:ffda14a3d0e97bb44fc572c9eef132abf384269a
+    image: industrialdevops/titan-ccp-sensor-management:4344cb28a6c60390d0df5ff6c022ba94b8a5ce9a
     expose:
       - "80"
     environment:
@@ -85,7 +85,7 @@ services:
       KAFKA_BOOTSTRAP_SERVERS: kafka:9092
       DEMO: "true"
   titan-ccp-frontend:
-    image: industrialdevops/titan-ccp-frontend:1f021d328a6e00719a6ccb256e931b45e09d62fd
+    image: industrialdevops/titan-ccp-frontend:a8d66b95fe2dced5267a0fc07ccaf5ecc0842e76
     ports:
       - "8185:8080"
     environment:
@@ -108,7 +108,7 @@ services:
       SCHEMA_REGISTRY_URL: http://schema-registry:8081
       TIMESTAMPS_IN_MS: "false"
   raritan-simulator:
-    image: industrialdevops/titan-ccp-raritan-simulator:c06b75cb100eb3cf808f99ffff1570dde09c612a
+    image: industrialdevops/titan-ccp-raritan-simulator:d7e4fde3880fee8922d836d54e6a11814736d93f
     environment:
       PUSH_ADDRESS: http://titan-flow-raritan:8080/raritan
       LOG_LEVEL: info

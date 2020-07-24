@@ -19,14 +19,14 @@ Git repositories:
 
 ## Titan Control Center - Deployment
 
-This repository contains declarations for deploying the Titan Control Center on a Kubernetes
-cluster or with Docker Compose.
+This repository contains declarations for deploying the Titan Control Center with [Docker Compose](docker-compose)
+or in a [cloud environment operated by Kubernetes](kubernetes).
 
 ## Reference
 
 Please cite the Titan Control Center as follows:
 
-S. Henning, W. Hasselbring and A. Möbius, *A Scalable Architecture for Power Consumption Monitoring in Industrial Production Environments*, 2019 IEEE International Conference on Fog Computing (ICFC), Prague, Czech Republic, 2019, pp. 124-133., Hamburg, Germany, 2019, pp. 123-126.
+S. Henning, W. Hasselbring and A. Möbius, *A Scalable Architecture for Power Consumption Monitoring in Industrial Production Environments*, 2019 IEEE International Conference on Fog Computing (ICFC), Prague, Czech Republic, 2019, pp. 124-133.
 DOI: [10.1109/ICFC.2019.00024](https://doi.org/10.1109/ICFC.2019.00024).
 
 BibTeX:
