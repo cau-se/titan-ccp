@@ -53,7 +53,7 @@ services:
       EMIT_PERIOD_MS: 10000
       GRACE_PERIOD_MS: 10000
   titan-ccp-history:
-    image: industrialdevops/titan-ccp-history:1c16d4b50ab1b4a5dd6ecee775cee7936bd2e1dc
+    image: industrialdevops/titan-ccp-history:2b3e7a5697d14c5afd322b8e8bf1f67b10571fbc
     expose:
       - "80"
     mem_limit: 512m
