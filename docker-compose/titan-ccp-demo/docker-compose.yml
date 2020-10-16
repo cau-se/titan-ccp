@@ -43,7 +43,7 @@ services:
       MONGODB_ADVERTISED_HOSTNAME: mongodb
       MONGODB_ROOT_PASSWORD: password
   titan-ccp-aggregation:
-    image: industrialdevops/titan-ccp-aggregation:118db34330e1a46643c20a359ac18ef738db3118
+    image: industrialdevops/titan-ccp-aggregation:60f938cf3085190f4e18ff9c671ff181276eb6c0
     expose:
       - "80"
     mem_limit: 512m
@@ -53,7 +53,7 @@ services:
       EMIT_PERIOD_MS: 10000
       GRACE_PERIOD_MS: 10000
   titan-ccp-history:
-    image: industrialdevops/titan-ccp-history:2b3e7a5697d14c5afd322b8e8bf1f67b10571fbc
+    image: industrialdevops/titan-ccp-history:ed88b02a53a9ae88c6150db495c6faead84b1018
     expose:
       - "80"
     mem_limit: 512m
@@ -64,7 +64,7 @@ services:
       KAFKA_BOOTSTRAP_SERVERS: kafka:9092
       SCHEMA_REGISTRY_URL: http://schema-registry:8081
   titan-ccp-stats:
-    image: industrialdevops/titan-ccp-stats:42560eb3bbe00a6fdfbf3887b8e9a36d3681f410
+    image: industrialdevops/titan-ccp-stats:3a303c6c60c9b813d68289e76c7618a48b17e679
     expose:
       - "80"
     mem_limit: 512m
@@ -85,7 +85,7 @@ services:
       KAFKA_BOOTSTRAP_SERVERS: kafka:9092
       DEMO: "true"
   titan-ccp-frontend:
-    image: industrialdevops/titan-ccp-frontend:cdbae0fe33ca3c4b396b28bf3d3f08df73157e7c
+    image: industrialdevops/titan-ccp-frontend:501a504e9c38ca6c8512a2de1dbdd13328656f25
     ports:
       - "8185:8080"
     environment:
