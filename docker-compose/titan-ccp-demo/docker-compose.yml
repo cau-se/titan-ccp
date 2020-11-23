@@ -85,9 +85,9 @@ services:
       KAFKA_BOOTSTRAP_SERVERS: kafka:9092
       DEMO: "true"
   titan-ccp-frontend:
-    image: industrialdevops/titan-ccp-frontend:d7abc428ca2010541d640a7fbbc6d508450944bb
+    image: industrialdevops/titan-ccp-frontend:61e6a2e72103c821218963c14a92f27051d440d3
     ports:
-      - "8185:8080"
+      - "8185:80"
     environment:
       DEMO: "true"
       SENSOR_MANAGEMENT_BASE_URL: "http://titan-ccp-sensor-management:80"
