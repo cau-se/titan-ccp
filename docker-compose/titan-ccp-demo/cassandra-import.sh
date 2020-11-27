@@ -11,3 +11,4 @@ cat hourofdayactivepowerrecord.csv | docker-compose exec -T cassandra cqlsh -k t
 cat hourofweekactivepowerrecord.csv | docker-compose exec -T cassandra cqlsh -k titanccp -e "COPY hourofweekactivepowerrecord FROM STDIN WITH INGESTRATE=50000;"
 cat onedayaggregation.csv | docker-compose exec -T cassandra cqlsh -k titanccp -e "COPY onedayaggregation FROM STDIN WITH INGESTRATE=50000;"
 cat onehouraggregation.csv | docker-compose exec -T cassandra cqlsh -k titanccp -e "COPY onehouraggregation FROM STDIN WITH INGESTRATE=50000;"
+cat onehouraggregation.csv | docker-compose exec -T cassandra cqlsh -k titanccp -e "COPY oneminaggregation FROM STDIN WITH INGESTRATE=50000;"
