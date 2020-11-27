@@ -89,7 +89,7 @@ services:
     ports:
       - "8185:80"
     environment:
-      DEMO: "true"
+      VUE_APP_DEMO_MODE: "true"
       SENSOR_MANAGEMENT_BASE_URL: "http://titan-ccp-sensor-management:80"
       HISTORY_BASE_URL: "http://titan-ccp-history:80"
       STATS_BASE_URL: "http://titan-ccp-stats:80"
