@@ -62,7 +62,7 @@ kubectl apply -f titan-ccp-frontend/
 ```
 
 
-## The Titan Flow Raritan
+## Deployment of demo sensors
 
 We provide a demo setup with a couple of simulated sensors. It can be deployed with:
 
