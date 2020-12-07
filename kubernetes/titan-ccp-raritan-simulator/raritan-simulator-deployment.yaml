@@ -1,4 +1,4 @@
-apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: titan-ccp-raritan-simulator
@@ -6,17 +6,15 @@ spec:
   selector:
     matchLabels:
       app: titan-ccp-raritan-simulator
-  replicas: 1 # tells deployment to run 2 pods matching the template
-  template: # create pods using pod definition in this template
+  replicas: 1
+  template:
     metadata:
-      # unlike pod-nginx.yaml, the name is not included in the meta data as a unique name is
-      # generated from the deployment name
       labels:
         app: titan-ccp-raritan-simulator
     spec:
       containers:
       - name: titan-ccp-raritan-simulator
-        image: industrialdevops/titan-ccp-raritan-simulator:d7e4fde3880fee8922d836d54e6a11814736d93f
+        image: industrialdevops/titan-ccp-raritan-simulator:latest
         env:
         - name: PUSH_ADDRESS
           value: "http://titan-flow-raritan-service:8080/raritan"

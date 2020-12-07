@@ -1,0 +1,22 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: kafka-topic-creator
+spec:
+  template:
+    spec:
+      containers:
+        - name: kafka-client
+          image: confluentinc/cp-enterprise-kafka:5.5.0
+          command:
+            - sh
+            - -c
+            - >
+              kafka-topics --bootstrap-server kafka-cp-kafka:9092 --create --topic hourofweek --partitions 3 --replication-factor 1;
+              kafka-topics --bootstrap-server kafka-cp-kafka:9092 --create --topic hourofday --partitions 3 --replication-factor 1;
+              kafka-topics --bootstrap-server kafka-cp-kafka:9092 --create --topic dayofweek --partitions 3 --replication-factor 1;
+              kafka-topics --bootstrap-server kafka-cp-kafka:9092 --create --topic aggregation-feedback --partitions 3 --replication-factor 1;
+              kafka-topics --bootstrap-server kafka-cp-kafka:9092 --create --topic input --partitions 3 --replication-factor 1;
+              kafka-topics --bootstrap-server kafka-cp-kafka:9092 --create --topic configuration --partitions 3 --replication-factor 1;
+              kafka-topics --bootstrap-server kafka-cp-kafka:9092 --create --topic output --partitions 3 --replication-factor 1;
+      restartPolicy: OnFailure

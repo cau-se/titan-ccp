@@ -1,4 +1,4 @@
-apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: titan-ccp-frontend
@@ -7,16 +7,16 @@ spec:
     matchLabels:
       app: titan-ccp-frontend
   replicas: 1
-  template: # create pods using pod definition in this template
+  template:
     metadata:
       labels:
         app: titan-ccp-frontend
     spec:
       containers:
       - name: titan-ccp-frontend
-        image: industrialdevops/titan-ccp-frontend:a8d66b95fe2dced5267a0fc07ccaf5ecc0842e76
+        image: industrialdevops/titan-ccp-frontend:latest
         env:
-        - name: DEMO
+        - name: VUE_APP_DEMO_MODE
           value: "false"
         - name: CONFIGURATION_BASE_URL
           value: "http://titan-ccp-sensor-management:80"

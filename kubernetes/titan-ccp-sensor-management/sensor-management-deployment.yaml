@@ -1,4 +1,4 @@
-apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: titan-ccp-sensor-management
@@ -6,23 +6,21 @@ spec:
   selector:
     matchLabels:
       app: titan-ccp-sensor-management
-  replicas: 1 # tells deployment to run 2 pods matching the template
-  template: # create pods using pod definition in this template
+  replicas: 1
+  template:
     metadata:
-      # unlike pod-nginx.yaml, the name is not included in the meta data as a unique name is
-      # generated from the deployment name
       labels:
         app: titan-ccp-sensor-management
     spec:
       containers:
       - name: titan-ccp-sensor-management
-        image: industrialdevops/titan-ccp-sensor-management:4344cb28a6c60390d0df5ff6c022ba94b8a5ce9a
+        image: industrialdevops/titan-ccp-sensor-management:latest
         env:
         - name: WEBSERVER_PORT
           value: "80"
         - name: MONGODB_CONNECTION_URL
           value: "mongodb://root:password@mongo-mongodb:27017/?replicaSet=rs0"
         - name: KAFKA_BOOTSTRAP_SERVERS
-          value: "my-confluent-cp-kafka:9092"
+          value: "kafka-cp-kafka:9092"
         - name: DEMO
           value: "true"
