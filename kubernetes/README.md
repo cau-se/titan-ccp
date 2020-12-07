@@ -11,7 +11,7 @@ The Titan Control Center depends on some external software systems, which should
 
 ### The Kafka cluster
 
-Kafka ist used by the Titan Control Center by all microservices for their communication. Kafka (along with the required systems ZooKeeper and Schema Registry) can be installed via Helm and [Confluent's Helm Charts](https://github.com/confluentinc/cp-helm-charts). We provide a [default configuration](infrastructure/kafka/values.yaml).
+Kafka is used by the Titan Control Center by all microservices for their communication. Kafka (along with the required systems ZooKeeper and Schema Registry) can be installed via Helm and [Confluent's Helm Charts](https://github.com/confluentinc/cp-helm-charts). We provide a [default configuration](infrastructure/kafka/values.yaml).
 
 To install Confluent's Kafka with our suggested configuration run:
 
