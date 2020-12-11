@@ -1,4 +1,4 @@
-# Titan Control Center
+# Titan Control Center: Kubernetes Deployment
 
 This directory contains all configuration files to deploy the Titan Control Center in Kubernetes.
 

@@ -5,22 +5,34 @@ is a scalable and extensible analytics platform for [Industrial DevOps](https://
 It analyzes and visualizes data streams from Internet of Things (IIoT) sensors
 (e.g. electrical power consumption) in industrial production.
 
+This repository contains necessary infrastructure for deploying the Titan Control Center with
+[Docker Compose](docker-compose) or in a [cloud environment operated by Kubernetes](kubernetes).
+
 The Titan Control Center is designed in a microservice-based architecture augmented by big data
-and stream processing techniques. This repository contains necessary infrastructure to deploy the
-Titan Control Center. It's individual components are located in separate Git repositories:
+and stream processing techniques. The individual software components of the Titan Control Center are located in separate Git repositories:
 
 * **[History](https://github.com/cau-se/titan-ccp-history)** The *History* microservice
 * **[Aggregation](https://github.com/cau-se/titan-ccp-aggregation)** The *Aggregation* microservice
 * **[Statistics](https://github.com/cau-se/titan-ccp-stats)** The *Statistics* microservice
 * **[Sensor Management](https://github.com/cau-se/titan-ccp-sensor-management)** The *Sensor Management* microservice
-* **[Visualization](https://github.com/cau-se/titan-ccp-frontend)** Web-based *Visualization* and the corresponding backend
+* **[Visualization](https://github.com/cau-se/titan-ccp-frontend)** Web-based *Visualization* and the corresponding API gateway
 * **[Common](https://github.com/cau-se/titan-ccp-common)** Library code and record definitions to be used by all microservices
 * **[Titan Platform](https://doc.industrial-devops.org/titanPlatform/)** The *Titan Platform*, which is used for data stream aggregation and further interpretation
 
-## Titan Control Center - Deployment
+## Getting Started
 
-This repository contains declarations for deploying the Titan Control Center with [Docker Compose](docker-compose)
-or in a [cloud environment operated by Kubernetes](kubernetes).
+Before deploying the Titan Control Center, simply clone this repository or download one of our
+[releases](https://github.com/cau-se/titan-ccp/releases). We provide deployment declarations for Docker Compose and
+Kubernetes. While Docker Compose is a good fit having a quick look into the software, we highly recommend using
+Kubernetes for more serious deployments. Instructions for both options can be found in their corresponding directories:
+
+* [Deploying the Titan Control Center with Docker Compose](docker-compose)
+* [Deploying the Titan Control Center with Kubernetes](kubernetes)
+
+## Documentation
+
+The documentation of the Titan Control Center can be found in the [docs](docs) folder. It includes generel usage
+instructions for users, developers and operators.
 
 ## Reference
 
