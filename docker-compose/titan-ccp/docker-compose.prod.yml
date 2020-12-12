@@ -1,0 +1,8 @@
+version: '2'
+services:
+  titan-ccp-frontend:
+    ports:
+      - "80:80"
+  kafka:
+    ports:
+      - "19092:19092"

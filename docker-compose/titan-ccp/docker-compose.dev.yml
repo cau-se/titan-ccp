@@ -1,0 +1,17 @@
+version: '2'
+services:
+  zookeeper:
+    ports:
+      - "2181:2181"
+  kafka:
+    ports:
+      - "19092:19092"
+  schema-registry:
+    ports:
+      - "8081:8081"
+  cassandra:
+    ports:
+      - "9042:9042"
+  mongodb:
+    ports:
+      - "27017:27017"

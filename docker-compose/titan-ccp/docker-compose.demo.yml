@@ -1,0 +1,30 @@
+version: '2'
+services:
+  titan-ccp-sensor-management:
+    environment:
+      DEMO: "true"
+  titan-ccp-frontend:
+    ports:
+      - "8185:80"
+    environment:
+      VUE_APP_DEMO_MODE: "true"
+  titan-flow-raritan:
+    image: industrialdevops/flow-raritan:latest
+    depends_on:
+      - zookeeper
+      - kafka
+      - schema-registry
+    expose:
+      - "8080"
+    mem_limit: 512m
+    environment:
+      KAFKA_BOOTSTRAP_SERVERS: kafka:9092
+      KAFKA_TOPIC: input
+      SCHEMA_REGISTRY_URL: http://schema-registry:8081
+      TIMESTAMPS_IN_MS: "false"
+  raritan-simulator:
+    image: industrialdevops/titan-ccp-raritan-simulator:latest
+    environment:
+      PUSH_ADDRESS: http://titan-flow-raritan:8080/raritan
+      LOG_LEVEL: info
+    

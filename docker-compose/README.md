@@ -1,3 +1,4 @@
 # Titan Control Center: Docker Compose Deployment
 
-This directory contains Docker Compose configuration files for the Titan Control Center.
+Docker Compose configuration files for the Titan Control Center along with deployment instructions can be found in
+[titan-ccp](titan-ccp).
