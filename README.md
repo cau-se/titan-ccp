@@ -1,12 +1,12 @@
 # Titan Control Center
 
 The [Titan Control Center](https://ieeexplore.ieee.org/abstract/document/8822045)
-is a scalable and extensible analytics platform for [Industrial DevOps](https://industrial-devops.org/).
+is a scalable and extensible analytics platform for [Industrial DevOps](https://industrial-devops.org/en).
 It analyzes and visualizes data streams from Internet of Things (IIoT) sensors
 (e.g. electrical power consumption) in industrial production.
 
 This repository contains necessary infrastructure for deploying the Titan Control Center with
-[Docker Compose](docker-compose) or in a [cloud environment operated by Kubernetes](kubernetes).
+[Docker Compose](docker-compose/titan-ccp) or in a [cloud environment operated by Kubernetes](kubernetes).
 
 The Titan Control Center is designed in a microservice-based architecture augmented by big data
 and stream processing techniques. The individual software components of the Titan Control Center are located in separate Git repositories:
@@ -26,7 +26,7 @@ Before deploying the Titan Control Center, simply clone this repository or downl
 Kubernetes. While Docker Compose is a good fit having a quick look into the software, we highly recommend using
 Kubernetes for more serious deployments. Instructions for both options can be found in their corresponding directories:
 
-* [Deploying the Titan Control Center with Docker Compose](docker-compose)
+* [Deploying the Titan Control Center with Docker Compose](docker-compose/titan-ccp)
 * [Deploying the Titan Control Center with Kubernetes](kubernetes)
 
 ## Documentation

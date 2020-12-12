@@ -31,7 +31,7 @@ Kubernetes. While Docker Compose is a good fit having a quick look into the soft
 Kubernetes for more serious deployments. Instructions for both options are located next to their corresponding
 declarations:
 
-* [Deploying the Titan Control Center with Docker Compose](../docker-compose)
+* [Deploying the Titan Control Center with Docker Compose](../docker-compose/titan-ccp)
 * [Deploying the Titan Control Center with Kubernetes](../kubernetes)
 
 ## Integrating Sensors
