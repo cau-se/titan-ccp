@@ -27,21 +27,4 @@ services:
     environment:
       PUSH_ADDRESS: http://titan-flow-raritan:8080/raritan
       LOG_LEVEL: info
-  titan-ccp-anomalies:
-    image: industrialdevops/titan-ccp-anomaly-detection:latest
-    expose:
-      - "80"
-    ports:
-      -  8999:80
-    mem_limit: 512m
-    environment:
-      WEBSERVER_PORT: 80
-      CASSANDRA_HOST: cassandra
-      CASSANDRA_INIT_TIMEOUT_MS: 60000
-      KAFKA_BOOTSTRAP_SERVERS: kafka:9092
-      KAFKA.TOPIC.ACTIVEPOWER: input
-      KAFKA.TOPIC.AGGRACTIVEPOWER: output
-      KAFKA.TOPIC.HOUROFWEEKSTATS: hourofweek
-      KAFKA.TOPIC.ANOMALIES: anomalies
-      SCHEMA_REGISTRY_URL: http://schema-registry:8081
     
