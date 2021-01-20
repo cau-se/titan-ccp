@@ -78,6 +78,21 @@ services:
       KAFKA_TOPIC_ACTIVEPOWER: input
       KAFKA_TOPIC_AGGRACTIVEPOWER: output
       SCHEMA_REGISTRY_URL: http://schema-registry:8081
+  titan-ccp-anomaly-detection:
+    image: industrialdevops/titan-ccp-anomaly-detection:latest
+    expose:
+      - "80"
+    mem_limit: 512m
+    environment:
+      WEBSERVER_PORT: 80
+      CASSANDRA_HOST: cassandra
+      CASSANDRA_INIT_TIMEOUT_MS: 60000
+      KAFKA_BOOTSTRAP_SERVERS: kafka:9092
+      KAFKA_TOPIC_ACTIVEPOWER: input
+      KAFKA_TOPIC_AGGRACTIVEPOWER: output
+      KAFKA_TOPIC_HOUROFWEEKSTATS: hourofweek
+      KAFKA_TOPIC_ANOMALIES: anomalies
+      SCHEMA_REGISTRY_URL: http://schema-registry:8081
   titan-ccp-sensor-management:
     image: industrialdevops/titan-ccp-sensor-management:latest
     expose:
@@ -95,18 +110,4 @@ services:
       SENSOR_MANAGEMENT_BASE_URL: "http://titan-ccp-sensor-management:80"
       HISTORY_BASE_URL: "http://titan-ccp-history:80"
       STATS_BASE_URL: "http://titan-ccp-stats:80"
-  titan-ccp-anomalies:
-    image: industrialdevops/titan-ccp-anomaly-detection:latest
-    expose:
-      - "80"
-    mem_limit: 512m
-    environment:
-      WEBSERVER_PORT: 80
-      CASSANDRA_HOST: cassandra
-      CASSANDRA_INIT_TIMEOUT_MS: 60000
-      KAFKA_BOOTSTRAP_SERVERS: kafka:9092
-      KAFKA_TOPIC_ACTIVEPOWER: input
-      KAFKA_TOPIC_AGGRACTIVEPOWER: output
-      KAFKA_TOPIC_HOUROFWEEKSTATS: hourofweek
-      KAFKA_TOPIC_ANOMALIES: anomalies
-      SCHEMA_REGISTRY_URL: http://schema-registry:8081
+      ANOMALY_DETECTION_URL: "http://titan-ccp-anomaly-detection:80"
