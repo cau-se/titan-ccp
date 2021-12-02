@@ -1,15 +1,28 @@
-cff-version: 1.0.3
-message: If you use this software, please cite it as below.
-authors:
+cff-version: "1.1.0"
+message: If you use the Titan Control Center, please cite it using these metadata.
+authors: 
   - family-names: Henning
-    given-names: Sören
-    orcid: https://orcid.org/0000-0001-6912-2549
+    given-names: "Sören"
+    orcid: "https://orcid.org/0000-0001-6912-2549"
   - family-names: Hasselbring
     given-names: Wilhelm
-    orcid: https://orcid.org/0000-0001-6625-4335
-  - family-names: Möbius
-    given-names: Armin
+    orcid: "https://orcid.org/0000-0001-6625-4335"
 title: Titan Control Center
-version: 1.0.0
-doi: 10.1109/ICFC.2019.00024
-date-released: 2019-06-26
+version: 0.9.0v
+repository-code: "https://github.com/cau-se/titan-ccp"
+license: "Apache-2.0"
+doi: 10.1016/j.simpa.2020.100050
+preferred-citation:
+  type: article
+  authors: 
+    - family-names: Henning
+      given-names: "Sören"
+      orcid: "https://orcid.org/0000-0001-6912-2549"
+    - family-names: Hasselbring
+      given-names: Wilhelm
+      orcid: "https://orcid.org/0000-0001-6625-4335"
+  doi: "10.1016/j.simpa.2020.100050"
+  journal: "Software Impacts"
+  title: "The Titan Control Center for Industrial DevOps analytics research"
+  volume: 7
+  year: 2021

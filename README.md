@@ -38,19 +38,18 @@ instructions for users, developers and operators.
 
 Please cite the Titan Control Center as follows:
 
-S. Henning, W. Hasselbring and A. Möbius, *A Scalable Architecture for Power Consumption Monitoring in Industrial Production Environments*, 2019 IEEE International Conference on Fog Computing (ICFC), Prague, Czech Republic, 2019, pp. 124-133.
-DOI: [10.1109/ICFC.2019.00024](https://doi.org/10.1109/ICFC.2019.00024).
+> S. Henning, W. Hasselbring, *The Titan Control Center for Industrial DevOps analytics research*, Software Impacts 7 (2021), DOI: [10.1016/j.simpa.2020.100050](https://doi.org/10.1016/j.simpa.2020.100050).
 
 BibTeX:
 
-````bibtex
-@inproceedings{Hasselbring2019,
-    author={Wilhelm Hasselbring and S{\"o}ren Henning and Armin M{\"o}bius},
-    booktitle={2019 IEEE International Conference on Fog Computing (ICFC)},
-    title={A Scalable Architecture for Power Consumption Monitoring in Industrial Production Environments},
-    year={2019},
-    pages={124-133},
-    doi={10.1109/ICFC.2019.00024}, 
-    month={June}
+```bibtex
+@article{Henning2021,
+    title = {The Titan Control Center for Industrial DevOps analytics research},
+    journal = {Software Impacts},
+    volume = {7},
+    pages = {100050},
+    year = {2021},
+    doi = {10.1016/j.simpa.2020.100050},
+    author = {Sören Henning and Wilhelm Hasselbring},
 }
-````
+```
