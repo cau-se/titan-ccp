@@ -1,6 +1,6 @@
 # Titan Control Center
 
-The [Titan Control Center](https://ieeexplore.ieee.org/abstract/document/8822045)
+The [Titan Control Center](https://doi.org/10.1016/j.simpa.2020.100050)
 is a scalable and extensible analytics platform for [Industrial DevOps](https://industrial-devops.org/en).
 It analyzes and visualizes data streams from Internet of Things (IIoT) sensors
 (e.g. electrical power consumption) in industrial production.
