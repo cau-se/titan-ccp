@@ -8,7 +8,7 @@ authors:
     given-names: Wilhelm
     orcid: "https://orcid.org/0000-0001-6625-4335"
 title: Titan Control Center
-version: 0.9.0v
+version: "0.9.0"
 repository-code: "https://github.com/cau-se/titan-ccp"
 license: "Apache-2.0"
 doi: 10.1016/j.simpa.2020.100050
