@@ -15,6 +15,7 @@ and stream processing techniques. The individual software components of the Tita
 * **[Aggregation](https://github.com/cau-se/titan-ccp-aggregation)** The *Aggregation* microservice
 * **[Statistics](https://github.com/cau-se/titan-ccp-stats)** The *Statistics* microservice
 * **[Sensor Management](https://github.com/cau-se/titan-ccp-sensor-management)** The *Sensor Management* microservice
+* **[Anomaly Detection](https://github.com/cau-se/titan-cc-anomaly-detection)** The *Anomaly Detection* microservice
 * **[Visualization](https://github.com/cau-se/titan-ccp-frontend)** Web-based *Visualization* and the corresponding API gateway
 * **[Common](https://github.com/cau-se/titan-ccp-common)** Library code and record definitions to be used by all microservices
 * **[Titan Platform](https://doc.industrial-devops.org/titanPlatform/)** The *Titan Platform*, which is used for data stream aggregation and further interpretation
